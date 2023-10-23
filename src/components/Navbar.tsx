@@ -8,7 +8,7 @@ const Navbar = () => {
   const user = false;
 
   return (
-    <nav className='h-12 md:h-24 text-red-500 p-4 flex items-center justify-between border-b-2 border-red-500 uppercase'>
+    <nav className='h-12 md:h-24 text-red-500 p-4 flex items-center justify-between border-b-2 border-red-500 uppercase lg:px-20 xl:px-40'>
       <ul className='hidden list-none md:flex gap-4 items-center flex-1'>
         <li>
           <Link href='/'>Home</Link>
@@ -26,8 +26,8 @@ const Navbar = () => {
       <div className='md:hidden'>
         <Menu />
       </div>
-      <ul className='hidden list-none md:flex gap-4 items-center flex-1'>
-        <li className='flex items-center gap-2 px-1 bg-orange-300 rounded-md cursor-pointer'>
+      <ul className='hidden list-none md:flex gap-4 items-center justify-end flex-1'>
+        <li className='md:absolute top-3 right-2 lg:static flex items-center gap-2 px-1 bg-orange-300 rounded-md cursor-pointer'>
           <Image src='/img/phone.png' width={20} height={20} alt='phone' />
           <span>123 456 78</span>
         </li>
