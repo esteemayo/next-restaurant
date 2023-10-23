@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import CountDown from './CountDown';
+
 const Offer = () => {
   return (
     <div className='h-screen w-screen bg-black text-white flex flex-col md:flex-row'>
@@ -11,6 +13,7 @@ const Offer = () => {
           Progressively simplify effective e-toilers and process-centric methods
           of empowerment. Quickly pontificate parallel.
         </p>
+        <CountDown />
         <button className='bg-red-500 text-inherit py-3 px-6 rounded-md outline-red-400'>
           Order now
         </button>
