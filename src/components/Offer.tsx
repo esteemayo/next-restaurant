@@ -3,7 +3,7 @@ import Image from 'next/image';
 const Offer = () => {
   return (
     <div className='h-screen w-screen bg-black text-white flex flex-col md:flex-row'>
-      <div className='flex-1'>
+      <div className='flex-1 flex flex-col items-center justify-center'>
         <h1 className='text-inherit text-5xl xl:text-6xl font-bold capitalize'>
           Delicious burger & french fry
         </h1>
