@@ -21,7 +21,7 @@ export const menuLinks = [
   },
 ];
 
-export const x = [
+export const sliderItems = [
   {
     id: 1,
     title: 'always fresh & always crispy & always hot',
@@ -35,6 +35,6 @@ export const x = [
   {
     id: 3,
     title: 'the best pizza to share with your family',
-    image: '/img/slide3.png',
+    image: '/img/slide3.jpg',
   },
 ];
