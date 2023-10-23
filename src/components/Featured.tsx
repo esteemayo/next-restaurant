@@ -12,10 +12,10 @@ const Featured = () => {
           return (
             <div
               key={id}
-              className='w-screen h-[60vh] flex flex-col items-center justify-around p-4'
+              className='w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300'
             >
               {img && (
-                <div className='relative flex-1 w-full p-4'>
+                <div className='relative flex-1 w-full p-4 hover:rotate-[60deg] transition-all duration-500'>
                   <Image src={img} fill alt='' className='object-contain' />
                 </div>
               )}
