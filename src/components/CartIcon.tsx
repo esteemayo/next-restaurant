@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const CartIcon = () => {
   return (
-    <Link href='/cart'>
+    <Link href='/cart' className='flex items-center gap-4'>
       <div className='relative w-8 h-8'>
         <Image src='/img/cart.png' fill alt='cart' />
       </div>
