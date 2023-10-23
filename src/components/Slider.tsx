@@ -22,7 +22,7 @@ const Slider = () => {
 
   return (
     <div className='flex flex-col lg:flex-row h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)]'>
-      <div className='h-1/2 flex flex-col items-center justify-center gap-8 text-red-500 font-bold'>
+      <div className='flex-1 flex flex-col items-center justify-center gap-8 text-red-500 font-bold'>
         <h1 className='text-5xl text-center uppercase p-4 md:p-10 md:text-6xl xl:text-7xl'>
           {sliderItems[currentSlide].title}
         </h1>
@@ -30,7 +30,7 @@ const Slider = () => {
           Order now
         </button>
       </div>
-      <div className='w-full h-1/2 relative'>
+      <div className='flex-1 w-full relative'>
         <Image
           src={sliderItems[currentSlide].image}
           fill
