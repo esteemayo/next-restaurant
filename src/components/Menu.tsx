@@ -1,7 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
+
+import { menuLinks } from '@/data';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +28,16 @@ const Menu = () => {
           onClick={() => setIsOpen(false)}
         />
       )}
+      <div className='bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center text-3xl z-10'>
+        {menuLinks.map((link) => {
+          const { id, title, url } = link;
+          return (
+            <Link key={id} href={url}>
+              {title}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
