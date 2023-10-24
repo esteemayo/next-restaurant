@@ -28,6 +28,7 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
             <button className=''>{'>'}</button>
           </div>
         </div>
+        <button className=''>Add to Cart</button>
       </div>
     </div>
   );
