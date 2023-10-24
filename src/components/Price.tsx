@@ -19,7 +19,16 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
           );
         })}
       </div>
-      <div className=''></div>
+      <div className=''>
+        <div className=''>
+          <span className=''>Quantity</span>
+          <div className=''>
+            <button className=''>{'<'}</button>
+            <span>1</span>
+            <button className=''>{'>'}</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
