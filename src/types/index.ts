@@ -25,3 +25,12 @@ export type Menu = {
   img?: string;
   color: string;
 }[];
+
+export interface PriceProps {
+  id: number;
+  price: number;
+  options: {
+    title: string;
+    additionalPrice: number;
+  }[];
+}
