@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useCallback, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { PriceProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
@@ -28,9 +28,11 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
     });
   }, []);
 
-  const changePrice = useCallback((number: number) => {
-    setTotal((value) => value + number);
-  }, []);
+  useEffect(() => {
+    setTotal(
+      quantity * (options ? price + options[selected].additionalPrice : price)
+    );
+  }, [options, price, quantity, selected]);
 
   return (
     <div className='flex flex-col gap-4'>
@@ -49,6 +51,7 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
                   selected === index ? 'rgb(248 113 113)' : '#fff',
                 color: selected === index ? '#fff' : 'rgb(248 113 113)',
               }}
+              onClick={() => setSelected(index)}
             >
               {title}
             </button>
