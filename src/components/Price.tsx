@@ -41,7 +41,7 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
       </h2>
       <div className='flex items-center gap-4'>
         {options?.map((option, index) => {
-          const { title, additionalPrice } = option;
+          const { title } = option;
           return (
             <button
               key={title}
