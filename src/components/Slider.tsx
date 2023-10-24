@@ -26,7 +26,7 @@ const Slider = () => {
         <h1 className='text-5xl text-center uppercase p-4 md:p-10 md:text-6xl xl:text-7xl'>
           {sliderItems[currentSlide].title}
         </h1>
-        <button className='py-4 px-8 bg-red-500 text-white capitalize rounded-sm hover:bg-red-400'>
+        <button className='py-4 px-8 bg-red-500 text-white capitalize rounded-sm hover:bg-red-400 transition-all'>
           Order now
         </button>
       </div>
