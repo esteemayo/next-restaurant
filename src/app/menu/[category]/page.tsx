@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { pizzas } from '@/data';
+import { formatCurrency } from '@/utils/formatCurrency';
 
 const Category = () => {
   return (
@@ -19,6 +20,13 @@ const Category = () => {
                 <Image src={img} fill alt='image' className='object-contain' />
               </div>
             )}
+            <div className='flex items-center justify-between'>
+              <h1 className=''>{title}</h1>
+              <h2 className=''>{formatCurrency(price)}</h2>
+              <button className='uppercase bg-red-500 text-white p-2 rounded-sm'>
+                Add to cart
+              </button>
+            </div>
           </Link>
         );
       })}
