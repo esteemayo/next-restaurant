@@ -7,13 +7,15 @@ import { formatCurrency } from '@/utils/formatCurrency';
 
 const Price: FC<PriceProps> = ({ id, price, options }) => {
   return (
-    <div className=''>
-      <h2 className=''>{formatCurrency(parseFloat(price.toFixed(2)))}</h2>
-      <div className=''>
+    <div className='flex flex-col gap-4'>
+      <h2 className='text-2xl font-bold'>
+        {formatCurrency(parseFloat(price.toFixed(2)))}
+      </h2>
+      <div className='flex items-center gap-4'>
         {options?.map((option) => {
           const { title, additionalPrice } = option;
           return (
-            <button key={title} className=''>
+            <button key={title} className='p-2 ring-1 ring-red-400 rounded-sm'>
               {title}
             </button>
           );
