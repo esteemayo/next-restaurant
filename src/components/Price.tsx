@@ -62,9 +62,13 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
         <div className='flex items-center justify-between w-full p-3 ring-1 ring-red-500'>
           <span>Quantity</span>
           <div className='flex items-center gap-4'>
-            <button onClick={handleDecrement}>{'<'}</button>
+            <button onClick={handleDecrement} className='outline-red-400'>
+              {'<'}
+            </button>
             <span>{quantity}</span>
-            <button onClick={handleIncrement}>{'>'}</button>
+            <button onClick={handleIncrement} className='outline-red-400'>
+              {'>'}
+            </button>
           </div>
         </div>
         <button className='w-56 uppercase bg-red-500 text-white p-3 ring-1 ring-red-500 outline-red-400 rounded-sm'>
