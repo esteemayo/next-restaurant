@@ -5,7 +5,7 @@ import { FC, useCallback, useEffect, useState } from 'react';
 import { PriceProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
-const Price: FC<PriceProps> = ({ id, price, options }) => {
+const Price: FC<PriceProps> = ({ price, options }) => {
   const [total, setTotal] = useState(price);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
