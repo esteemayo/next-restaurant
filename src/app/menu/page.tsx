@@ -1,5 +1,6 @@
-import { menu } from '@/data';
 import Link from 'next/link';
+
+import { menu } from '@/data';
 
 const Menu = () => {
   return (
