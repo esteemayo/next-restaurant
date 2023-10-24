@@ -27,7 +27,7 @@ const Featured = () => {
                 <span className='text-xl font-bold'>
                   {formatCurrency(price)}
                 </span>
-                <button className='bg-red-500 text-white p-2 rounded-md outline-red-400'>
+                <button className='bg-red-500 text-white p-2 rounded-sm outline-red-400'>
                   Add to Cart
                 </button>
               </div>
