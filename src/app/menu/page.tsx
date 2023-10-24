@@ -16,7 +16,13 @@ const Menu = () => {
             <div className={`text-${color} w-1/2`}>
               <h1 className='uppercase font-bold text-3xl'>{title}</h1>
               <p className='text-sm my-8'>{desc}</p>
-              <button className={`hidden 2xl:block capitalize`}>Explore</button>
+              <button
+                className={`hidden 2xl:block capitalize py-2 px-4 bg-${color} text-${
+                  color === 'black' ? 'white' : 'red-500'
+                } rounded-sm`}
+              >
+                Explore
+              </button>
             </div>
           </Link>
         );
