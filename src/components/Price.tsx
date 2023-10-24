@@ -45,13 +45,13 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
           return (
             <button
               key={title}
-              className='min-w-[6rem] p-2 ring-1 ring-red-400 rounded-sm'
+              onClick={() => setSelected(index)}
+              className='min-w-[6rem] p-2 ring-1 ring-red-400 rounded-sm outline-red-400'
               style={{
                 backgroundColor:
                   selected === index ? 'rgb(248 113 113)' : '#fff',
                 color: selected === index ? '#fff' : 'rgb(248 113 113)',
               }}
-              onClick={() => setSelected(index)}
             >
               {title}
             </button>
