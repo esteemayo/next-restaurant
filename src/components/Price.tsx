@@ -71,7 +71,7 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
             </button>
           </div>
         </div>
-        <button className='w-56 uppercase bg-red-500 text-white p-3 ring-1 ring-red-500 outline-red-400 rounded-sm'>
+        <button className='w-56 uppercase bg-red-500 text-white p-3 ring-1 ring-red-500 outline-red-400 rounded-sm hover:bg-red-400 transition-all'>
           Add to Cart
         </button>
       </div>
