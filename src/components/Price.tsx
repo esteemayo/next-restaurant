@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 
 import { PriceProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
@@ -10,16 +10,28 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
 
+  const changePrice = useCallback((number: number) => {
+    setTotal((value) => value + number);
+  }, []);
+
   return (
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>
-        {formatCurrency(parseFloat(price.toFixed(2)))}
+        {formatCurrency(parseFloat(total.toFixed(2)))}
       </h2>
       <div className='flex items-center gap-4'>
-        {options?.map((option) => {
+        {options?.map((option, index) => {
           const { title, additionalPrice } = option;
           return (
-            <button key={title} className='p-2 ring-1 ring-red-400 rounded-sm'>
+            <button
+              key={title}
+              className='min-w-[6rem] p-2 ring-1 ring-red-400 rounded-sm'
+              style={{
+                backgroundColor:
+                  selected === index ? 'rgb(248 113 113)' : '#fff',
+                color: selected === index ? '#fff' : 'rgb(248 113 113)',
+              }}
+            >
               {title}
             </button>
           );
@@ -30,7 +42,7 @@ const Price: FC<PriceProps> = ({ id, price, options }) => {
           <span>Quantity</span>
           <div className='flex items-center gap-4'>
             <button>{'<'}</button>
-            <span>1</span>
+            <span>{quantity}</span>
             <button>{'>'}</button>
           </div>
         </div>
