@@ -25,7 +25,7 @@ const Category = () => {
               <h2 className='group-hover:hidden text-xl'>
                 {formatCurrency(price)}
               </h2>
-              <button className='hidden group-hover:block uppercase bg-red-500 text-white p-2 rounded-sm'>
+              <button className='hidden group-hover:block uppercase bg-red-500 text-white p-2 rounded-sm hover:bg-red-400 transition-all'>
                 Add to cart
               </button>
             </div>
