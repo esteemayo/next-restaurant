@@ -14,7 +14,14 @@ const Cart = () => {
         <h2 className=''>{formatCurrency(79.9)}</h2>
         <span>X</span>
       </div>
-      <div className=''></div>
+      <div className=''>
+        <div className=''>
+          <span className=''>Subtotal (3 items)</span>
+          <span className=''>{formatCurrency(81.7)}</span>
+        </div>
+        <hr className='' />
+        <button className='uppercase'>Checkout</button>
+      </div>
     </main>
   );
 };
