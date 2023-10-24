@@ -29,7 +29,7 @@ export type Menu = {
 export interface PriceProps {
   id: number;
   price: number;
-  options: {
+  options?: {
     title: string;
     additionalPrice: number;
   }[];
