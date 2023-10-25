@@ -34,7 +34,7 @@ const Login = () => {
             <span className=''>Sign in with Facebook</span>
           </button>
           <p className=''>
-            Have a problem? <Link href='#'>Contact us</Link>
+            Have a problem? <Link href='/'>Contact us</Link>
           </p>
         </div>
       </div>
