@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Login = () => {
   return (
-    <main>
+    <main className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center'>
       <div className=''>
         <div className='relative'>
           <Image src='/img/loginBg.png' fill alt='' />
