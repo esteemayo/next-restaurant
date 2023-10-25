@@ -4,12 +4,12 @@ import Image from 'next/image';
 const Login = () => {
   return (
     <main className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center'>
-      <div className='h-full shadow-2xl rounded-md flex flex-col md:flex-row md:w-full lg:w-[70%] 2xl:w-[50%]'>
+      <div className='h-full shadow-xl rounded-md flex flex-col md:flex-row md:w-full lg:w-[70%] 2xl:w-1/2'>
         <div className='relative w-full h-1/3 md:w-1/2 md:h-full'>
           <Image src='/img/loginBg.webp' fill alt='' className='object-cover' />
         </div>
         <div className='p-10 flex flex-col gap-8 md:w-1/2'>
-          <h1 className='font-bold text-xl'>Welcome</h1>
+          <h1 className='font-bold text-xl 2xl:text-3xl'>Welcome</h1>
           <p className=''>
             Log into your account or create a new one using social buttons
           </p>
