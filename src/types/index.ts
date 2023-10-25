@@ -55,7 +55,7 @@ export type CartItems = CartItem[];
 
 export interface FeaturedCardProps {
   id: number;
-  img: string;
+  img?: string;
   title: string;
   desc: string;
   price: number;
