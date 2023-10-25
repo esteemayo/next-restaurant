@@ -8,7 +8,7 @@ const Login = () => {
         <div className='relative w-full h-1/3'>
           <Image src='/img/loginBg.webp' fill alt='' className='object-cover' />
         </div>
-        <div className=''>
+        <div className='p-10 flex flex-col gap-8'>
           <h1 className=''>Welcome</h1>
           <p className=''>
             Log into your account or create a new one using social buttons
