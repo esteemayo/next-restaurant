@@ -39,6 +39,14 @@ const Cart = () => {
           <span className=''>Subtotal (3 items)</span>
           <span className=''>{formatCurrency(81.7)}</span>
         </div>
+        <div className='flex justify-between'>
+          <span className='capitalize'>Service cost</span>
+          <span className=''>{formatCurrency(0.0)}</span>
+        </div>
+        <div className='flex justify-between'>
+          <span className='capitalize'>Delivery cost</span>
+          <span className='uppercase'>Free</span>
+        </div>
         <hr className='' />
         <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase'>
           Checkout
