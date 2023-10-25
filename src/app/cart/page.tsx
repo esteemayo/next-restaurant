@@ -4,8 +4,8 @@ import { formatCurrency } from '@/utils/formatCurrency';
 
 const Cart = () => {
   return (
-    <main className='p-4 lg:p-20 xl:p-40'>
-      <div className=''>
+    <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500'>
+      <div className='h-1/2 p-4'>
         <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
         <div className=''>
           <h1 className=''>sicilian</h1>
@@ -14,7 +14,7 @@ const Cart = () => {
         <h2 className=''>{formatCurrency(79.9)}</h2>
         <span>X</span>
       </div>
-      <div className=''>
+      <div className='h-1/2 p-4 bg-fuchsia-50'>
         <div className=''>
           <span className=''>Subtotal (3 items)</span>
           <span className=''>{formatCurrency(81.7)}</span>
