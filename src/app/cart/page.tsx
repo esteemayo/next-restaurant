@@ -45,7 +45,7 @@ const Cart = () => {
         </div>
         <div className='flex justify-between'>
           <span className='capitalize'>Delivery cost</span>
-          <span className='uppercase'>Free</span>
+          <span className='uppercase text-green-500'>Free</span>
         </div>
         <hr className='' />
         <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase'>
