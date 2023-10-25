@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import Menu from '../Menu';
 import CartIcon from '../CartIcon';
+import NavItem from './NavItem';
 
 const Navbar = () => {
   const user = false;
@@ -10,15 +11,9 @@ const Navbar = () => {
   return (
     <nav className='h-12 md:h-24 text-red-500 p-4 flex items-center justify-between border-b-2 border-red-500 uppercase lg:px-20 xl:px-40'>
       <ul className='hidden list-none md:flex gap-4 items-center flex-1'>
-        <li>
-          <Link href='/'>Home</Link>
-        </li>
-        <li>
-          <Link href='/menu'>Menu</Link>
-        </li>
-        <li>
-          <Link href='/'>Contact</Link>
-        </li>
+        <NavItem url='/' label='Home' />
+        <NavItem url='/menu' label='Menu' />
+        <NavItem url='/' label='Contact' />
       </ul>
       <div className='text-xl md:font-bold flex-1 md:text-center'>
         <Link href='/'>Massimo</Link>
