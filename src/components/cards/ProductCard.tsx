@@ -19,7 +19,7 @@ const ProductCard: FC<ProductCardProps> = ({ id, img, price, title }) => {
       <div className='flex items-center justify-between font-bold'>
         <h1 className='text-2xl uppercase p-2'>{title}</h1>
         <h2 className='group-hover:hidden text-xl'>{formatCurrency(price)}</h2>
-        <button className='hidden group-hover:block uppercase bg-red-500 text-white p-2 rounded-sm hover:bg-red-400 transition-all'>
+        <button className='hidden group-hover:block uppercase bg-red-500 text-white p-2 rounded-sm'>
           Add to cart
         </button>
       </div>
