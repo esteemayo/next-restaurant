@@ -54,7 +54,7 @@ const Cart = () => {
             {formatCurrency(81.7)}
           </span>
         </div>
-        <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase'>
+        <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase self-end'>
           Checkout
         </button>
       </div>
