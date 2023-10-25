@@ -1,9 +1,9 @@
 const Orders = () => {
   return (
     <main className='p-4 lg:p-20 xl:p-40'>
-      <table className=''>
+      <table className='w-full'>
         <thead>
-          <tr>
+          <tr className='text-left'>
             <th>Order ID</th>
             <th>Date</th>
             <th>Price</th>
