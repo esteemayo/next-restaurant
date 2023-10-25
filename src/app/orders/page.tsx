@@ -1,7 +1,7 @@
 const Orders = () => {
   return (
     <main className='p-4 lg:p-20 xl:p-40'>
-      <table className='w-full'>
+      <table className='w-full border-separate border-spacing-3'>
         <thead>
           <tr className='text-left'>
             <th className='hidden md:block'>Order ID</th>
