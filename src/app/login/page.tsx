@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 const Login = () => {
@@ -22,7 +23,7 @@ const Login = () => {
             />
             <span className=''>Sign in with Google</span>
           </button>
-          <button className='flex items-center gap-4 p-4 ring-1 ring-orange-100 rounded-sm'>
+          <button className='flex items-center gap-4 p-4 ring-1 ring-blue-100 rounded-sm'>
             <Image
               src='/img/facebook.png'
               width={20}
@@ -32,6 +33,9 @@ const Login = () => {
             />
             <span className=''>Sign in with Facebook</span>
           </button>
+          <p className=''>
+            Have a problem? <Link href='#'>Contact us</Link>
+          </p>
         </div>
       </div>
     </main>
