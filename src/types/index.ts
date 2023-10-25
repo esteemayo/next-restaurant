@@ -57,6 +57,6 @@ export interface FeaturedCardProps {
   id: number;
   img?: string;
   title: string;
-  desc: string;
+  desc?: string;
   price: number;
 }
