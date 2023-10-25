@@ -47,7 +47,13 @@ const Cart = () => {
           <span className='capitalize'>Delivery cost</span>
           <span className='uppercase text-green-500'>Free</span>
         </div>
-        <hr className='' />
+        <hr className='my-2' />
+        <div className='flex justify-between'>
+          <span className='uppercase'>Total(Incl. vat)</span>
+          <span className='uppercase font-bold text-inherit'>
+            {formatCurrency(81.7)}
+          </span>
+        </div>
         <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase'>
           Checkout
         </button>
