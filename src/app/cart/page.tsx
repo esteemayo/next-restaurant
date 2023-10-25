@@ -4,8 +4,8 @@ import { formatCurrency } from '@/utils/formatCurrency';
 
 const Cart = () => {
   return (
-    <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500'>
-      <div className='h-1/2 p-4 flex flex-col justify-center overflow-scroll'>
+    <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row'>
+      <div className='h-1/2 p-4 flex flex-col justify-center overflow-scroll lg:h-full lg:w-2/3'>
         <div className='flex items-center justify-between mb-4'>
           <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
           <div className=''>
@@ -34,7 +34,7 @@ const Cart = () => {
           <span className='cursor-pointer'>X</span>
         </div>
       </div>
-      <div className='h-1/2 p-4 bg-fuchsia-50 flex flex-col gap-4 justify-center'>
+      <div className='h-1/2 p-4 bg-fuchsia-50 flex flex-col gap-4 justify-center lg:h-full lg:w-1/3'>
         <div className='flex justify-between'>
           <span className=''>Subtotal (3 items)</span>
           <span className=''>{formatCurrency(81.7)}</span>
