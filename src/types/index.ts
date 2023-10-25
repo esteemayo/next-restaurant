@@ -35,7 +35,7 @@ export interface PriceProps {
   }[];
 }
 
-export interface CartItems {
+export interface CartItem {
   id: number;
   title: string;
   img?: string;
@@ -45,3 +45,5 @@ export interface CartItems {
     additionalPrice: number;
   };
 }
+
+export type CartItems = CartItem[];
