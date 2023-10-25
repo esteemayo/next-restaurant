@@ -5,9 +5,9 @@ import { formatCurrency } from '@/utils/formatCurrency';
 const Cart = () => {
   return (
     <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500'>
-      <div className='h-1/2 p-4'>
+      <div className='h-1/2 p-4 flex flex-col justify-center'>
         <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
-        <div className=''>
+        <div className='flex items-center justify-between'>
           <h1 className=''>sicilian</h1>
           <span className=''>Large</span>
         </div>
