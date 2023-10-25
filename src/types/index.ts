@@ -59,3 +59,10 @@ export interface FeaturedCardProps {
   desc?: string;
   price: number;
 }
+
+export interface ProductCardProps {
+  id: number;
+  price: number;
+  title: string;
+  img?: string;
+}
