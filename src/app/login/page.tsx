@@ -4,9 +4,9 @@ import Image from 'next/image';
 const Login = () => {
   return (
     <main className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center'>
-      <div className=''>
-        <div className='relative'>
-          <Image src='/img/loginBg.png' fill alt='' />
+      <div className='h-full shadow-2xl rounded-md flex flex-col md:flex-row'>
+        <div className='relative w-full h-1/3'>
+          <Image src='/img/loginBg.webp' fill alt='' className='object-cover' />
         </div>
         <div className=''>
           <h1 className=''>Welcome</h1>
