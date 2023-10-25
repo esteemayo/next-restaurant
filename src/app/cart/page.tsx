@@ -15,6 +15,24 @@ const Cart = () => {
           <h2 className='font-bold'>{formatCurrency(79.9)}</h2>
           <span className='cursor-pointer'>X</span>
         </div>
+        <div className='flex items-center justify-between mb-4'>
+          <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
+          <div className=''>
+            <h1 className='uppercase text-xl font-bold'>sicilian</h1>
+            <span className=''>Large</span>
+          </div>
+          <h2 className='font-bold'>{formatCurrency(79.9)}</h2>
+          <span className='cursor-pointer'>X</span>
+        </div>
+        <div className='flex items-center justify-between mb-4'>
+          <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
+          <div className=''>
+            <h1 className='uppercase text-xl font-bold'>sicilian</h1>
+            <span className=''>Large</span>
+          </div>
+          <h2 className='font-bold'>{formatCurrency(79.9)}</h2>
+          <span className='cursor-pointer'>X</span>
+        </div>
       </div>
       <div className='h-1/2 p-4 bg-fuchsia-50'>
         <div className=''>
