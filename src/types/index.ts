@@ -38,9 +38,9 @@ export interface PriceProps {
 export interface CartItem {
   id: number;
   title: string;
-  img?: string;
+  img: string;
   price: number;
-  options?: {
+  options: {
     title: string;
     additionalPrice: number;
   };
