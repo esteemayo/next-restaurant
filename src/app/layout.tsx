@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 
 import Layout from '@/components/Layout';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} overflow-x-hidden`}>
+      <body className={`${nunito.className} overflow-x-hidden`}>
         <Layout>{children}</Layout>
       </body>
     </html>
