@@ -1,4 +1,4 @@
-import { Menu, Product, Products } from '@/types';
+import { CartItems, Menu, Product, Products } from '@/types';
 
 export const menuLinks = [
   {
@@ -408,5 +408,38 @@ export const menu: Menu = [
     desc: 'Pizza Paradise: Irresistible slices, mouthwatering toppings, and cheesy perfection.',
     img: '/img/temporary/m3.png',
     color: 'white',
+  },
+];
+
+export const cartItems: CartItems = [
+  {
+    id: 1,
+    title: 'Sicilian',
+    img: '/img/temporary/p1.png',
+    price: 30.9,
+    options: {
+      title: 'Large',
+      additionalPrice: 6,
+    },
+  },
+  {
+    id: 2,
+    title: 'Bacon Deluxe',
+    img: '/img/temporary/p2.png',
+    price: 33.9,
+    options: {
+      title: 'Medium',
+      additionalPrice: 4,
+    },
+  },
+  {
+    id: 3,
+    title: 'Bella Napoli',
+    img: '/img/temporary/p3.png',
+    price: 24.9,
+    options: {
+      title: 'Small',
+      additionalPrice: 0,
+    },
   },
 ];
