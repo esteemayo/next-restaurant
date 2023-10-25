@@ -6,13 +6,15 @@ const Cart = () => {
   return (
     <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500'>
       <div className='h-1/2 p-4 flex flex-col justify-center'>
-        <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
-        <div className='flex items-center justify-between'>
-          <h1 className=''>sicilian</h1>
-          <span className=''>Large</span>
+        <div className='flex items-center justify-between mb-4 overflow-scroll'>
+          <Image src='/img/temporary/p1.png' width={100} height={100} alt='' />
+          <div className=''>
+            <h1 className='uppercase text-xl font-bold'>sicilian</h1>
+            <span className=''>Large</span>
+          </div>
+          <h2 className=''>{formatCurrency(79.9)}</h2>
+          <span>X</span>
         </div>
-        <h2 className=''>{formatCurrency(79.9)}</h2>
-        <span>X</span>
       </div>
       <div className='h-1/2 p-4 bg-fuchsia-50'>
         <div className=''>
