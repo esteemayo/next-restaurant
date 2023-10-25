@@ -6,6 +6,11 @@ export interface ClientOnlyProps {
   children: React.ReactNode;
 }
 
+export interface NavItemProps {
+  url: string;
+  label: string;
+}
+
 export interface Product {
   id: number;
   title: string;
