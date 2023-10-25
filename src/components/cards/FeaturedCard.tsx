@@ -12,10 +12,7 @@ const FeaturedCard: FC<FeaturedCardProps> = ({
   title,
 }) => {
   return (
-    <div
-      key={id}
-      className='w-screen md:w-[50vw] xl:w-[33vw] h-[60vh] xl:h-[90vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300'
-    >
+    <div className='w-screen md:w-[50vw] xl:w-[33vw] h-[60vh] xl:h-[90vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300'>
       {img && (
         <div className='relative flex-1 w-full p-4 hover:rotate-[60deg] transition-all duration-500'>
           <Image src={img} fill alt='' className='object-contain' />
