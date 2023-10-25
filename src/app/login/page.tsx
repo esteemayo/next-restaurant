@@ -33,8 +33,11 @@ const Login = () => {
             />
             <span className=''>Sign in with Facebook</span>
           </button>
-          <p className=''>
-            Have a problem? <Link href='/'>Contact us</Link>
+          <p className='text-sm'>
+            Have a problem?{' '}
+            <Link href='/' className='underline underline-offset-2'>
+              Contact us
+            </Link>
           </p>
         </div>
       </div>
