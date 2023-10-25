@@ -34,3 +34,14 @@ export interface PriceProps {
     additionalPrice: number;
   }[];
 }
+
+export interface CartItems {
+  id: number;
+  title: string;
+  img?: string;
+  price: number;
+  options?: {
+    title: string;
+    additionalPrice: number;
+  };
+}
