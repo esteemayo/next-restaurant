@@ -9,7 +9,7 @@ const Login = () => {
           <Image src='/img/loginBg.webp' fill alt='' className='object-cover' />
         </div>
         <div className='p-10 flex flex-col gap-8'>
-          <h1 className=''>Welcome</h1>
+          <h1 className='font-bold text-xl'>Welcome</h1>
           <p className=''>
             Log into your account or create a new one using social buttons
           </p>
