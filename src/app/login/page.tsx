@@ -10,7 +10,7 @@ const Login = () => {
             src='/img/loginBg.webp'
             fill
             alt=''
-            className='object-cover rounded-l-md'
+            className='block object-cover rounded-l-md'
           />
         </div>
         <div className='p-10 flex flex-col gap-8 md:w-1/2'>
@@ -24,7 +24,7 @@ const Login = () => {
               width={20}
               height={20}
               alt='google'
-              className='object-contain'
+              className='block object-contain'
             />
             <span className=''>Sign in with Google</span>
           </button>
@@ -34,7 +34,7 @@ const Login = () => {
               width={20}
               height={20}
               alt='facebook'
-              className='object-contain'
+              className='block object-contain'
             />
             <span className=''>Sign in with Facebook</span>
           </button>
