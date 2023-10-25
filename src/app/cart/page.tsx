@@ -34,8 +34,8 @@ const Cart = () => {
           <span className='cursor-pointer'>X</span>
         </div>
       </div>
-      <div className='h-1/2 p-4 bg-fuchsia-50'>
-        <div className=''>
+      <div className='h-1/2 p-4 bg-fuchsia-50 flex flex-col gap-4 justify-center'>
+        <div className='flex justify-between'>
           <span className=''>Subtotal (3 items)</span>
           <span className=''>{formatCurrency(81.7)}</span>
         </div>
