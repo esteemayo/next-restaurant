@@ -33,7 +33,7 @@ const Navbar = () => {
         </li>
         {!user ? (
           <li>
-            <Link href='/'>Login</Link>
+            <Link href='/login'>Login</Link>
           </li>
         ) : (
           <li>
