@@ -27,13 +27,9 @@ const Navbar = () => {
           <span>123 456 78</span>
         </li>
         {!user ? (
-          <li>
-            <Link href='/login'>Login</Link>
-          </li>
+          <NavItem url='/login' label='Login' />
         ) : (
-          <li>
-            <Link href='/menu'>Orders</Link>
-          </li>
+          <NavItem url='/orders' label='Orders' />
         )}
         <li>
           <CartIcon />
