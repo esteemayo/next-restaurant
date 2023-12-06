@@ -33,3 +33,12 @@ model Product {
   category   Category @relation(fields: [catSlug], references: [slug])
   catSlug    String
 }
+
+model Order {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  price     Decimal
+  products  Json[]
+  status    String
+  intent_id String?  @unique
+}
