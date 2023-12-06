@@ -2,7 +2,23 @@ import Link from 'next/link';
 
 import { menu } from '@/data';
 
-const Menu = () => {
+const getData = async () => {
+  const res = await fetch('http://localhost:3000/api/categories', {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed');
+  }
+
+  const data = await res.json();
+  return data;
+};
+
+const Menu = async () => {
+  const menus = await getData();
+  console.log(menus);
+
   return (
     <main className='p-4 lg:px-20 xl:p-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center'>
       {menu.map((item) => {
