@@ -9,3 +9,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Category {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  title     String
+  desc      String
+  color     String
+  img       String
+  slug      String   @unique
+}
