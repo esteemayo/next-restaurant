@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: esteem
+      POSTGRES_PASSWORD: mydatabasepassword
+      POSTGRES_DB: restaurant
+    ports:
+      - 5432:5432
