@@ -75,3 +75,15 @@ export type MenuType = {
   title: string;
   color: string;
 }[];
+
+export type ProductType = {
+  id: string;
+  img?: string;
+  desc?: string;
+  price: number;
+  title: string;
+  options?: {
+    title: string;
+    additionalPrice: number;
+  }[];
+}[];
