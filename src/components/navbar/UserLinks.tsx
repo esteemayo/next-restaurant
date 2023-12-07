@@ -8,7 +8,7 @@ const UserLinks = () => {
   const { status } = useSession();
 
   return (
-    <div>
+    <div className='flex items-center'>
       {status === 'unauthenticated' ? (
         <NavItem url='/login' label='Login' />
       ) : (
