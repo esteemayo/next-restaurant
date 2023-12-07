@@ -1,7 +1,3 @@
-export interface ClientOnlyProps {
-  children: React.ReactNode;
-}
-
 export interface NavItemProps {
   url: string;
   label: string;
