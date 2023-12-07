@@ -1,3 +1,4 @@
+import { ProductType } from '@/types';
 import ProductCard from '@/components/cards/ProductCard';
 
 const getData = async (category: string) => {
@@ -23,7 +24,7 @@ interface CategoryProps {
 }
 
 const Category = async ({ params }: CategoryProps) => {
-  const pizzas = await getData(params.category);
+  const pizzas: ProductType = await getData(params.category);
 
   return (
     <main className='flex flex-wrap text-red-500'>
