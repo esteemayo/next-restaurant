@@ -2,7 +2,9 @@ import { ProductType } from '@/types';
 import FeaturedCard from './cards/FeaturedCard';
 
 const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/products');
+  const res = await fetch('http://localhost:3000/api/products', {
+    cache: 'no-store',
+  });
 
   if (!res.ok) {
     throw new Error('Failed');
