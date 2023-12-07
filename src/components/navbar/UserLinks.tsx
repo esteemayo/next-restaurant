@@ -8,13 +8,13 @@ const UserLinks = () => {
   const { status } = useSession();
 
   return (
-    <div className='flex items-center'>
+    <div>
       {status === 'unauthenticated' ? (
         <NavItem url='/login' label='Login' />
       ) : (
-        <div>
+        <div className='flex items-center'>
           <NavItem url='/orders' label='Orders' />
-          <span onClick={() => signOut()}>Logout</span>
+          <span className='ml-4 cursor-pointer' onClick={() => signOut()}>Logout</span>
         </div>
       )}
     </div>
