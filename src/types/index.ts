@@ -66,3 +66,12 @@ export interface ProductCardProps {
   title: string;
   img?: string;
 }
+
+export type MenuProps = {
+  id: string;
+  img?: string;
+  slug: string;
+  desc?: string;
+  title: string;
+  color: string;
+}[];
