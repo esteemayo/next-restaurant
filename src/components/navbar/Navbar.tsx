@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 
 import Menu from '../Menu';
@@ -6,7 +9,7 @@ import CartIcon from '../CartIcon';
 import NavItem from './NavItem';
 
 const Navbar = () => {
-  const user = false;
+  const { status } = useSession();
 
   return (
     <nav className='h-12 md:h-24 text-red-500 p-4 flex items-center justify-between border-b-2 border-red-500 uppercase lg:px-20 xl:px-40'>
@@ -26,7 +29,7 @@ const Navbar = () => {
           <Image src='/img/phone.png' width={20} height={20} alt='phone' />
           <span>123 456 78</span>
         </li>
-        {!user ? (
+        {status === 'unauthenticated' ? (
           <NavItem url='/login' label='Login' />
         ) : (
           <NavItem url='/orders' label='Orders' />
