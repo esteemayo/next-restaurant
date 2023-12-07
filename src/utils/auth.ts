@@ -1,6 +1,6 @@
 import FacebookProvider from 'next-auth/providers/facebook';
-import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+import { NextAuthOptions, getServerSession } from 'next-auth';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -14,3 +14,5 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
+
+export const getAuthSession = () => getServerSession(authOptions);
