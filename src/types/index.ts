@@ -67,7 +67,7 @@ export interface ProductCardProps {
   img?: string;
 }
 
-export type MenuProps = {
+export type MenuType = {
   id: string;
   img?: string;
   slug: string;
