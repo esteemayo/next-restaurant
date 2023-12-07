@@ -1,3 +1,4 @@
+import { ProductType } from '@/types';
 import FeaturedCard from './cards/FeaturedCard';
 
 const getData = async () => {
@@ -12,7 +13,7 @@ const getData = async () => {
 };
 
 const Featured = async () => {
-  const featuredProducts = await getData();
+  const featuredProducts: ProductType = await getData();
   console.log(featuredProducts);
 
   return (
