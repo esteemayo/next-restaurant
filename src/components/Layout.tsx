@@ -1,15 +1,11 @@
-import { FC } from 'react';
-
 import ClientOnly from './ClientOnly';
 import Footer from './Footer';
 import Notification from './Notification';
 
-import { LayoutProps } from '@/types';
+import Navbar from './navbar/Navbar';
 import AuthProvider from '@/app/providers/AuthProvider';
 
-import Navbar from './navbar/Navbar';
-
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClientOnly>
       <AuthProvider>
