@@ -10,12 +10,12 @@ const UserLinks = () => {
   return (
     <div>
       {status === 'unauthenticated' ? (
+        <NavItem url='/login' label='Login' />
+      ) : (
         <div>
-          <NavItem url='/login' label='Login' />
+          <NavItem url='/orders' label='Orders' />
           <span onClick={() => signOut()}>Logout</span>
         </div>
-      ) : (
-        <NavItem url='/orders' label='Orders' />
       )}
     </div>
   );
