@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import Image from 'next/image';
 
 import { FeaturedCardProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
-const FeaturedCard: FC<FeaturedCardProps> = ({ img, desc, price, title }) => {
+const FeaturedCard = ({ img, desc, price, title }: FeaturedCardProps) => {
   return (
     <div className='w-screen md:w-[50vw] xl:w-[33vw] h-[60vh] xl:h-[90vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300'>
       {img && (
