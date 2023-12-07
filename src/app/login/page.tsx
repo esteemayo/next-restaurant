@@ -1,7 +1,24 @@
+'use client';
+
 import Link from 'next/link';
+import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
+  const { data, status } = useSession();
+  const router = useRouter();
+  console.log(data);
+  console.log(status);
+
+  if (status === 'loading') {
+    return <p>loading...</p>;
+  }
+
+  if (status==='authenticated') {
+    return router.push('/');
+  }
+
   return (
     <main className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center'>
       <div className='h-full shadow-xl rounded-md flex flex-col md:flex-row md:w-full md:h-[70%] lg:w-[70%] 2xl:w-1/2'>
@@ -18,7 +35,10 @@ const Login = () => {
           <p className=''>
             Log into your account or create a new one using social buttons
           </p>
-          <button className='flex items-center gap-4 p-4 ring-1 ring-orange-100 rounded-sm'>
+          <button
+            className='flex items-center gap-4 p-4 ring-1 ring-orange-100 rounded-sm'
+            onClick={() => signIn('google')}
+          >
             <Image
               src='/img/google.png'
               width={20}
