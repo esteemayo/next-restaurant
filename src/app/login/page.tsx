@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
