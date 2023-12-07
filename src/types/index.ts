@@ -61,7 +61,7 @@ export interface FeaturedCardProps {
 }
 
 export interface ProductCardProps {
-  id: number;
+  id: string;
   price: number;
   title: string;
   img?: string;
