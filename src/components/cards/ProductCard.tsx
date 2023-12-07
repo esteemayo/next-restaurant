@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import { FC } from 'react';
 import Image from 'next/image';
 
 import { ProductCardProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
-const ProductCard: FC<ProductCardProps> = ({ id, img, price, title }) => {
+const ProductCard = ({ id, img, price, title }: ProductCardProps) => {
   return (
     <Link
       href={`/product/${encodeURIComponent(id)}`}
