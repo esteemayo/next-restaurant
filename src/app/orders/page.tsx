@@ -1,6 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import { useCallback } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
@@ -16,6 +17,13 @@ const Orders = () => {
     queryFn: () =>
       fetch('http://localhost:3000/api/orders').then((res) => res.json()),
   });
+
+  const handleUpdate = useCallback(
+    (e: React.FormEvent<HTMLFormElement>, id: string) => {
+      e.preventDefault();
+    },
+    []
+  );
 
   if (status === 'unauthenticated') {
     return router.push('/');
@@ -52,7 +60,10 @@ const Orders = () => {
                 </td>
                 {session?.user.isAdmin ? (
                   <td>
-                    <form className='flex items-center justify-center gap-4'>
+                    <form
+                      onSubmit={(e) => handleUpdate(e, id)}
+                      className='flex items-center justify-center gap-4'
+                    >
                       <input
                         type='text'
                         placeholder={status}
