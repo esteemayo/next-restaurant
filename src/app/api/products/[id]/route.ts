@@ -10,19 +10,19 @@ interface IParams {
 
 export const GET = async ({ params }: IParams) => {
   const { id: productId } = params;
-  
+
   try {
     const product = await prisma.product.findUnique({
       where: {
-        id: productId
-      }
+        id: productId,
+      },
     });
 
-    return new NextResponse(JSON.stringify(product), { status: 200 })
+    return new NextResponse(JSON.stringify(product), { status: 200 });
   } catch (err) {
     return new NextResponse(
       JSON.stringify({ message: 'Something went wrong!' }),
       { status: 500 }
     );
   }
-}
+};
