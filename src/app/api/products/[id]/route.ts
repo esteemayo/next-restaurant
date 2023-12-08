@@ -20,7 +20,8 @@ export const GET = async ({ params }: IParams) => {
 
     return new NextResponse(JSON.stringify(product), { status: 200 })
   } catch (err) {
-    return new NextResponse(JSON.stringify({ message: 'Something went wrong!' }),
+    return new NextResponse(
+      JSON.stringify({ message: 'Something went wrong!' }),
       { status: 500 }
     );
   }
