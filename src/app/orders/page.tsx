@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 import { OrderType } from '@/types';
 
@@ -45,6 +46,7 @@ const Orders = () => {
 
       mutation.mutate({ id, status });
       form.reset();
+      toast.success('The order status has been changed!');
     },
     [mutation]
   );
