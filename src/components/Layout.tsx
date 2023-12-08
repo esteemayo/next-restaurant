@@ -2,17 +2,21 @@ import ClientOnly from './ClientOnly';
 import Footer from './Footer';
 import Notification from './Notification';
 
-import Navbar from './navbar/Navbar';
 import AuthProvider from '@/providers/AuthProvider';
+import QueryProvider from '@/providers/QueryProvider';
+
+import Navbar from './navbar/Navbar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ClientOnly>
       <AuthProvider>
-        <Notification />
-        <Navbar />
-        {children}
-        <Footer />
+        <QueryProvider>
+          <Notification />
+          <Navbar />
+          {children}
+          <Footer />
+        </QueryProvider>
       </AuthProvider>
     </ClientOnly>
   );
