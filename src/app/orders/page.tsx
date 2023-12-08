@@ -73,7 +73,12 @@ const Orders = () => {
           {data.map((item: OrderType) => {
             const { id, createdAt, price, products, status } = item;
             return (
-              <tr key={id} className='text-sm md:text-base bg-red-50'>
+              <tr
+                key={id}
+                className={`text-sm md:text-base ${
+                  status !== 'delivered' && 'bg-red-50'
+                }`}
+              >
                 <td className='hidden md:block py-6 px-1'>{id}</td>
                 <td className='py-6 px-1'>
                   {createdAt.toString().slice(0, 10)}
