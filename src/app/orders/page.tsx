@@ -1,15 +1,17 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
 import { OrderType } from '@/types';
-import Image from 'next/image';
 
 const Orders = () => {
   const router = useRouter();
+
+  const queryClient = useQueryClient();
   const { data: session, status } = useSession();
 
   const { isLoading, error, data } = useQuery({
@@ -18,11 +20,32 @@ const Orders = () => {
       fetch('http://localhost:3000/api/orders').then((res) => res.json()),
   });
 
+  const mutation = useMutation({
+    mutationFn: ({ id, status }: { id: string; status: string }) => {
+      return fetch(`http://localhost:3000/api/orders/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(status),
+      });
+    },
+    onSuccess() {
+      queryClient.invalidateQueries({ queryKey: ['orders'] });
+    },
+  });
+
   const handleUpdate = useCallback(
     (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
+
+      const form = e.target as HTMLFormElement;
+      const input = form.elements[0] as HTMLInputElement;
+      const status = input.value;
+
+      mutation.mutate({ id, status });
     },
-    []
+    [mutation]
   );
 
   if (status === 'unauthenticated') {
