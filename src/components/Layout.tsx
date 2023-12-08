@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Notification from './Notification';
 
 import Navbar from './navbar/Navbar';
-import AuthProvider from '@/app/providers/AuthProvider';
+import AuthProvider from '@/providers/AuthProvider';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
