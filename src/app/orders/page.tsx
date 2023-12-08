@@ -44,6 +44,7 @@ const Orders = () => {
       const status = input.value;
 
       mutation.mutate({ id, status });
+      form.reset();
     },
     [mutation]
   );
