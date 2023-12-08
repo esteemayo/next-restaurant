@@ -89,3 +89,12 @@ export interface OrderType {
   createdAt: Date;
   intent_id?: string;
 }
+
+export interface CartItemType {
+  id: string;
+  title: string;
+  img?: string;
+  price: number;
+  optionTitle?: string;
+  quantity: number;
+}
