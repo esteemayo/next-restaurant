@@ -67,7 +67,7 @@ const Orders = () => {
                       <input
                         type='text'
                         placeholder={status}
-                        className='p-2 ring-1 ring-red-100 rounded-sm'
+                        className='p-2 ring-1 ring-red-100 rounded-sm outline-red-100 caret-red-400'
                       />
                       <button
                         type='submit'
