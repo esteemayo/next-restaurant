@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
 import { OrderType } from '@/types';
+import Image from 'next/image';
 
 const Orders = () => {
   const router = useRouter();
@@ -49,7 +50,30 @@ const Orders = () => {
                     return item.title;
                   })}
                 </td>
-                <td>{status}</td>
+                {session?.user.isAdmin ? (
+                  <td>
+                    <form className='flex items-center justify-center gap-4'>
+                      <input
+                        type='text'
+                        placeholder={status}
+                        className='p-2 ring-1 ring-red-100 rounded-sm'
+                      />
+                      <button
+                        type='submit'
+                        className='bg-red-400 p-2 rounded-full'
+                      >
+                        <Image
+                          src='/img/edit.png'
+                          width={20}
+                          height={20}
+                          alt=''
+                        />
+                      </button>
+                    </form>
+                  </td>
+                ) : (
+                  <td>{status}</td>
+                )}
               </tr>
             );
           })}
