@@ -30,7 +30,7 @@ const Price = ({ price, options }: PriceProps) => {
 
   useEffect(() => {
     setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
+      quantity * (options?.length ? price + options[selected].additionalPrice : price)
     );
   }, [options, price, quantity, selected]);
 
@@ -38,7 +38,7 @@ const Price = ({ price, options }: PriceProps) => {
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>{formatCurrency(total)}</h2>
       <div className='flex items-center gap-4'>
-        {options?.map((option, index) => {
+        {options?.length && options?.map((option, index) => {
           const { title } = option;
           return (
             <button
