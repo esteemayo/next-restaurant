@@ -2,13 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
 
-import { ActionType, CartItemType } from '@/types';
-
-interface CartStore {
-  products: CartItemType[];
-  totalItems: number;
-  totalPrice: number;
-}
+import { ActionType, CartStore } from '@/types';
 
 const INITIAL_STATE = {
   products: [],

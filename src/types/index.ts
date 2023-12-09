@@ -96,6 +96,12 @@ export interface CartItemType {
   quantity: number;
 }
 
+export interface CartStore {
+  products: CartItemType[];
+  totalItems: number;
+  totalPrice: number;
+}
+
 export interface ActionType {
   addToCart(payload: CartItemType): void;
   removeFromCart(payload: CartItemType): void;
