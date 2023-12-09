@@ -30,7 +30,8 @@ const Price = ({ price, options }: PriceProps) => {
 
   useEffect(() => {
     setTotal(
-      quantity * (options?.length ? price + options[selected].additionalPrice : price)
+      quantity *
+        (options?.length ? price + options[selected].additionalPrice : price)
     );
   }, [options, price, quantity, selected]);
 
@@ -38,23 +39,24 @@ const Price = ({ price, options }: PriceProps) => {
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>{formatCurrency(total)}</h2>
       <div className='flex items-center gap-4'>
-        {options?.length && options?.map((option, index) => {
-          const { title } = option;
-          return (
-            <button
-              key={title}
-              onClick={() => setSelected(index)}
-              className='min-w-[6rem] p-2 ring-1 ring-red-400 rounded-sm outline-red-400'
-              style={{
-                backgroundColor:
-                  selected === index ? 'rgb(248 113 113)' : '#fff',
-                color: selected === index ? '#fff' : 'rgb(248 113 113)',
-              }}
-            >
-              {title}
-            </button>
-          );
-        })}
+        {options?.length &&
+          options?.map((option, index) => {
+            const { title } = option;
+            return (
+              <button
+                key={title}
+                onClick={() => setSelected(index)}
+                className='min-w-[6rem] p-2 ring-1 ring-red-400 rounded-sm outline-red-400'
+                style={{
+                  backgroundColor:
+                    selected === index ? 'rgb(248 113 113)' : '#fff',
+                  color: selected === index ? '#fff' : 'rgb(248 113 113)',
+                }}
+              >
+                {title}
+              </button>
+            );
+          })}
       </div>
       <div className='flex items-center justify-between'>
         <div className='flex items-center justify-between w-full p-3 ring-1 ring-red-500'>
