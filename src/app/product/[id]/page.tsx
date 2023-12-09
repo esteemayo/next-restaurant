@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import Price from '@/components/Price';
+import { SingleProductType } from '@/types';
 
 const getData = async (id: string) => {
   const res = await fetch(`http://localhost:3000/api/products/${id}`, {
@@ -22,7 +23,7 @@ interface IParams {
 }
 
 const Product = async ({ params }: IParams) => {
-  const product = await getData(params.id);
+  const product: SingleProductType = await getData(params.id);
 
   return (
     <main className='p-4 lg:px-20 xl:p-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center'>
