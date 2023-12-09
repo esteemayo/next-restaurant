@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -8,11 +6,7 @@ import CartIcon from '../CartIcon';
 import NavItem from './NavItem';
 import UserLinks from './UserLinks';
 
-import { useCartStore } from '@/hooks/useCartStore';
-
 const Navbar = () => {
-  const totalItems = useCartStore((state) => state.totalItems);
-
   return (
     <nav className='h-12 md:h-24 text-red-500 p-4 flex items-center justify-between border-b-2 border-red-500 uppercase lg:px-20 xl:px-40'>
       <ul className='hidden list-none md:flex gap-4 items-center flex-1'>
@@ -33,7 +27,7 @@ const Navbar = () => {
         </li>
         <UserLinks />
         <li>
-          <CartIcon quantity={totalItems} />
+          <CartIcon />
         </li>
       </ul>
     </nav>
