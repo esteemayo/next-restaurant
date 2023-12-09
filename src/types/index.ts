@@ -80,17 +80,7 @@ export type SingleProductType = {
   }[];
 };
 
-export type ProductType = {
-  id: string;
-  img?: string;
-  desc?: string;
-  price: number;
-  title: string;
-  options?: {
-    title: string;
-    additionalPrice: number;
-  }[];
-}[];
+export type ProductType = SingleProductType[];
 
 export interface OrderType {
   id: string;
