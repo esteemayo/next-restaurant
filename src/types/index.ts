@@ -24,7 +24,7 @@ export type Menu = {
 }[];
 
 export interface PriceProps {
-  id: number;
+  id: string;
   price: number;
   options?: {
     title: string;
