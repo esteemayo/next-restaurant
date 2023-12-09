@@ -24,12 +24,7 @@ export type Menu = {
 }[];
 
 export interface PriceProps {
-  id: string;
-  price: number;
-  options?: {
-    title: string;
-    additionalPrice: number;
-  }[];
+  product: SingleProductType;
 }
 
 export interface CartItem {

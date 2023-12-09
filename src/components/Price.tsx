@@ -5,8 +5,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { PriceProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
-const Price = ({ price, options }: PriceProps) => {
-  const [total, setTotal] = useState(price);
+const Price = ({ product }: PriceProps) => {
+  const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
 
@@ -31,16 +31,16 @@ const Price = ({ price, options }: PriceProps) => {
   useEffect(() => {
     setTotal(
       quantity *
-        (options?.length ? price + options[selected].additionalPrice : price)
+        (product.options?.length ? product.price + product.options[selected].additionalPrice : product.price)
     );
-  }, [options, price, quantity, selected]);
+  }, [product, quantity, selected]);
 
   return (
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>{formatCurrency(total)}</h2>
       <div className='flex items-center gap-4'>
-        {options?.length &&
-          options?.map((option, index) => {
+        {product.options?.length &&
+          product.options?.map((option, index) => {
             const { title } = option;
             return (
               <button

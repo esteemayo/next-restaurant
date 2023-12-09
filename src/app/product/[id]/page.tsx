@@ -37,11 +37,7 @@ const Product = async ({ params }: IParams) => {
           {product.title}
         </h1>
         <p className=''>{product.desc}</p>
-        <Price
-          id={product.id}
-          price={product.price}
-          options={product.options}
-        />
+        <Price product={product} />
       </div>
     </main>
   );
