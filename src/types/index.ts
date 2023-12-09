@@ -95,3 +95,8 @@ export interface CartItemType {
   optionTitle?: string;
   quantity: number;
 }
+
+export interface ActionType {
+  addToCart(payload: CartItemType): void;
+  removeFromCart(payload: CartItemType): void;
+}
