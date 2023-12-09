@@ -36,9 +36,7 @@ const Price: FC<PriceProps> = ({ price, options }) => {
 
   return (
     <div className='flex flex-col gap-4'>
-      <h2 className='text-2xl font-bold'>
-        {formatCurrency(parseFloat(total.toFixed(2)))}
-      </h2>
+      <h2 className='text-2xl font-bold'>{formatCurrency(total)}</h2>
       <div className='flex items-center gap-4'>
         {options?.map((option, index) => {
           const { title } = option;
