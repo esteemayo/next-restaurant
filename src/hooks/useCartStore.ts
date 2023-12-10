@@ -51,10 +51,11 @@ export const useCartStore = create<CartStore & ActionType>()(
       removeFromCart: (payload) =>
         set(
           produce((state) => {
+            const products = get().products;
+            const index = products.find((item) => item.id === payload.id);
+
             state.products.splice(
-              state.products.find(
-                (item: { id: string }) => item.id !== payload.id
-              ),
+              index,
               1
             );
             state.totalItems -= payload.quantity;
