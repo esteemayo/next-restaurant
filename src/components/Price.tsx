@@ -32,18 +32,23 @@ const Price = ({ product }: PriceProps) => {
     });
   }, []);
 
-  const handleCart = useCallback(() => {
-    addToCart({
-      ...product,
-      price: total,
-      ...(product.options?.length && {
-        optionTitle: product.options[selected].title,
-      }),
-      quantity,
-    });
+  const handleCart = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
 
-    toast.success('The product added to the cart!');
-  }, [addToCart, quantity, product, selected, total]);
+      addToCart({
+        ...product,
+        price: total,
+        ...(product.options?.length && {
+          optionTitle: product.options[selected].title,
+        }),
+        quantity,
+      });
+
+      toast.success('The product added to the cart!');
+    },
+    [addToCart, quantity, product, selected, total]
+  );
 
   useEffect(() => {
     setTotal(
