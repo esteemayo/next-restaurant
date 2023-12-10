@@ -14,16 +14,36 @@ const INITIAL_STATE = {
 
 export const useCartStore = create<CartStore & ActionType>()(
   persist(
-    devtools((set) => ({
+    devtools((set, get) => ({
       products: INITIAL_STATE.products,
       totalItems: INITIAL_STATE.totalItems,
       totalPrice: INITIAL_STATE.totalPrice,
       addToCart: (payload) =>
         set(
           produce((state) => {
-            state.products.push(payload);
-            state.totalItems += payload.quantity;
-            state.totalPrice += payload.price;
+            const products = get().products;
+            const productInState = products.find(
+              (item) => item.id === payload.id
+            );
+
+            if (productInState) {
+              const updatedProducts = products.map((item) =>
+                item.id === productInState.id
+                  ? {
+                      ...item,
+                      quantity: payload.quantity + item.quantity,
+                      price: payload.price + item.price,
+                    }
+                  : item
+              );
+              state.products = updatedProducts;
+              state.totalItems += payload.quantity;
+              state.totalPrice += payload.price;
+            } else {
+              state.products.push(payload);
+              state.totalItems += payload.quantity;
+              state.totalPrice += payload.price;
+            }
           }),
           false,
           'addToCart'
