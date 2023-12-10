@@ -25,6 +25,9 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
       if (res.status === 200) {
         router.push('/menu');
         toast.success('The product has been deleted!');
+      } else {
+        const data = await res.json();
+        toast.error(data.message);
       }
     },
     [id, router]
