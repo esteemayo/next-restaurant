@@ -22,8 +22,8 @@ export const useCartStore = create<CartStore & ActionType>()(
         set(
           produce((state) => {
             state.products.push(payload);
-            state.totalItems = state.totalItems + payload.quantity;
-            state.totalPrice = state.totalPrice + payload.price;
+            state.totalItems += payload.quantity;
+            state.totalPrice += payload.price;
           }),
           false,
           'addToCart'
@@ -37,8 +37,8 @@ export const useCartStore = create<CartStore & ActionType>()(
               ),
               1
             );
-            state.totalItems = state.totalItems - payload.quantity;
-            state.totalPrice = state.totalPrice - payload.price;
+            state.totalItems -= payload.quantity;
+            state.totalPrice -= payload.price;
           }),
           false,
           'removeFromCart'
