@@ -1,11 +1,15 @@
 'use client';
 
+import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
 
-import { PriceProps } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
+import { PriceProps } from '@/types';
+import { useCartStore } from '@/hooks/useCartStore';
 
 const Price = ({ product }: PriceProps) => {
+  const addToCart = useCartStore((state) => state.addToCart);
+
   const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
@@ -28,10 +32,25 @@ const Price = ({ product }: PriceProps) => {
     });
   }, []);
 
+  const handleCart = useCallback(() => {
+    addToCart({
+      ...product,
+      price: total,
+      ...(product.options?.length && {
+        optionTitle: product.options[selected].title,
+      }),
+      quantity,
+    });
+
+    toast.success('The product added to the cart!');
+  }, [addToCart, quantity, product, selected, total]);
+
   useEffect(() => {
     setTotal(
       quantity *
-        (product.options?.length ? product.price + product.options[selected].additionalPrice : product.price)
+        (product.options?.length
+          ? product.price + product.options[selected].additionalPrice
+          : product.price)
     );
   }, [product, quantity, selected]);
 
@@ -71,7 +90,10 @@ const Price = ({ product }: PriceProps) => {
             </button>
           </div>
         </div>
-        <button className='w-56 uppercase bg-red-500 text-white p-3 ring-1 ring-red-500 outline-red-400 rounded-sm hover:bg-red-400 transition-all'>
+        <button
+          onClick={handleCart}
+          className='w-56 uppercase bg-red-500 text-white p-3 ring-1 ring-red-500 outline-red-400 rounded-sm hover:bg-red-400 transition-all'
+        >
           Add to Cart
         </button>
       </div>
