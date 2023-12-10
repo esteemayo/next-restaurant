@@ -41,7 +41,7 @@ const Product = async ({ params }: IParams) => {
         <p className=''>{product.desc}</p>
         <Price product={product} />
       </div>
-      <DeleteButton />
+      <DeleteButton id={product.id} />
     </main>
   );
 };
