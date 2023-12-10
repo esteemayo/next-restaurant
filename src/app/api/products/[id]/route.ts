@@ -40,7 +40,9 @@ export const DELETE = async (req: NextRequest, { params }: IParams) => {
         },
       });
 
-      return new NextResponse(JSON.stringify('Product has been deleted!'), { status: 204 });
+      return new NextResponse(JSON.stringify('Product has been deleted!'), {
+        status: 200,
+      });
     } catch (err) {
       return new NextResponse(
         JSON.stringify({ message: 'Something went wrong!' }),
