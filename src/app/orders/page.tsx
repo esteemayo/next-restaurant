@@ -3,9 +3,9 @@
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { OrderType } from '@/types';
 
@@ -50,6 +50,10 @@ const Orders = () => {
     },
     [mutation]
   );
+
+  useEffect(() => {
+    error && toast.error(error.message);
+  }, [error]);
 
   if (status === 'unauthenticated') {
     return router.push('/');
