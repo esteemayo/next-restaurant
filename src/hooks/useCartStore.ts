@@ -31,7 +31,7 @@ export const useCartStore = create<CartStore & ActionType>()(
       removeFromCart: (payload) =>
         set(
           produce((state) => {
-            state.products = state.products.splice(
+            state.products.splice(
               state.products.find(
                 (item: { id: string }) => item.id !== payload.id
               ),
