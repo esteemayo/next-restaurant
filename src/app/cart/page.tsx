@@ -15,12 +15,14 @@ const Cart = () => {
     <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row'>
       <div className='h-1/2 p-4 flex flex-col justify-center overflow-y-scroll lg:h-full lg:w-2/3 2xl:w-1/2 lg:p-20 xl:p-40'>
         {products.map((item) => {
-          const { id, img, title, price, optionTitle } = item;
+          const { id, img, title, price, optionTitle, quantity } = item;
           return (
             <div key={id} className='flex items-center justify-between mb-4'>
               {img && <Image src={img} width={100} height={100} alt={title} />}
               <div className=''>
-                <h1 className='uppercase text-xl font-bold'>{title}</h1>
+                <h1 className='uppercase text-xl font-bold'>
+                  {title} x{quantity}
+                </h1>
                 <span className=''>{optionTitle}</span>
               </div>
               <h2 className='font-bold'>{formatCurrency(price)}</h2>
