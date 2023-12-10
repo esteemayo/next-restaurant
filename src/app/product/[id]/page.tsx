@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 import Price from '@/components/Price';
+import DeleteButton from '@/components/DeleteButton';
+
 import { SingleProductType } from '@/types';
 
 const getData = async (id: string) => {
@@ -26,7 +28,7 @@ const Product = async ({ params }: IParams) => {
   const product: SingleProductType = await getData(params.id);
 
   return (
-    <main className='p-4 lg:px-20 xl:p-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center'>
+    <main className='p-4 lg:px-20 xl:p-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center relative'>
       {product.img && (
         <div className='relative w-full h-1/2 md:h-[70%]'>
           <Image src={product.img} fill alt='' className='object-contain' />
@@ -39,6 +41,7 @@ const Product = async ({ params }: IParams) => {
         <p className=''>{product.desc}</p>
         <Price product={product} />
       </div>
+      <DeleteButton />
     </main>
   );
 };
