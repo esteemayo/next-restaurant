@@ -3,7 +3,11 @@
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 
-const DeleteButton = () => {
+interface DeleteButtonProps {
+  id: string
+}
+
+const DeleteButton = ({ id }: DeleteButtonProps) => {
   const { data: session, status } = useSession();
 
   if (status === 'loading') {
