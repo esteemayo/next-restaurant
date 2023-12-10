@@ -1,15 +1,52 @@
 'use client';
 
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
+import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { useCartStore } from '@/hooks/useCartStore';
 import { formatCurrency } from '@/utils/formatCurrency';
 
 const Cart = () => {
+  const router = useRouter();
+  const { data: session } = useSession();
+
   const totalItems = useCartStore((state) => state.totalItems);
   const products = useCartStore((state) => state.products);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const totalPrice = useCartStore((state) => state.totalPrice);
+
+  const handleCheckout = useCallback(
+    async (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      if (!session) {
+        router.push('/login');
+      } else {
+        try {
+          const res = await fetch('http://localhost:3000/api/orders', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              price: totalPrice,
+              products,
+              status: 'Not Paid!',
+              userEmail: session.user.id,
+            }),
+          });
+
+          const data = await res.json();
+          router.push(`/pay/${data.id}`);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    },
+    [products, router, session, totalPrice]
+  );
 
   return (
     <main className='h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row'>
@@ -56,7 +93,10 @@ const Cart = () => {
             {formatCurrency(totalPrice)}
           </span>
         </div>
-        <button className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase self-end'>
+        <button
+          onClick={handleCheckout}
+          className='bg-red-500 text-white p-3 rounded-sm w-1/2 uppercase self-end'
+        >
           Checkout
         </button>
       </div>
