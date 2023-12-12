@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 import { prisma } from '@/utils/connect';
 
@@ -10,7 +10,7 @@ interface IParams {
   };
 }
 
-export const POST = async (req: NextRequest, { params }: IParams) => {
+export const POST = async ({ params }: IParams) => {
   const { orderId } = params;
 
   try {
