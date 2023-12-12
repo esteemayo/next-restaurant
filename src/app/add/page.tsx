@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const initialState = {
@@ -23,6 +23,16 @@ const AddProduct = () => {
   const [inputs, setInputs] = useState(initialState);
   const [option, setOption] = useState(optionInitialState);
 
+  const handleChange = useCallback(
+    ({
+      target: input,
+    }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = input;
+      setInputs((prev) => ({ ...prev, [name]: value }));
+    },
+    []
+  );
+
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
@@ -41,6 +51,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='text'
             name='title'
+            onChange={handleChange}
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -48,6 +59,7 @@ const AddProduct = () => {
           <textarea
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200 resize-none'
             name='desc'
+            onChange={handleChange}
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -56,6 +68,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='number'
             name='price'
+            onChange={handleChange}
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -64,6 +77,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='text'
             name='category'
+            onChange={handleChange}
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
