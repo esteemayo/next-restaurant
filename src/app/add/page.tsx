@@ -55,6 +55,10 @@ const AddProduct = () => {
     [option]
   );
 
+  const handleDeleteOption = useCallback((title: string) => {
+    setOptions((prev) => [...prev].filter((item) => item.title !== title));
+  }, []);
+
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
@@ -140,6 +144,7 @@ const AddProduct = () => {
             return (
               <div
                 key={title}
+                onClick={() => handleDeleteOption(title)}
                 className='ring-1 p-2 ring-red-500 rounded-md cursor-pointer'
               >
                 <span>{title}</span>
