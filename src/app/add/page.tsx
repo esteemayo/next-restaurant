@@ -5,6 +5,7 @@ import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Inputs, Option } from '@/types';
+import { formatCurrency } from '@/utils/formatCurrency';
 
 const initialState: Inputs = {
   title: '',
@@ -49,6 +50,7 @@ const AddProduct = () => {
       e.stopPropagation();
 
       setOptions((prev) => [...prev, option]);
+      setOption(optionInitialState);
     },
     [option]
   );
@@ -107,6 +109,7 @@ const AddProduct = () => {
               className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='text'
               name='title'
+              value={option.title}
               placeholder='Title'
               onChange={handleChangeOption}
             />
@@ -114,22 +117,32 @@ const AddProduct = () => {
               className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='number'
               name='additionalPrice'
+              value={option.additionalPrice}
               placeholder='Addtional Price'
               onChange={handleChangeOption}
             />
-            <button
-              onClick={handleOptions}
-              className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'
-            >
-              Add option
-            </button>
           </div>
+          <button
+            type='button'
+            onClick={handleOptions}
+            className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'
+          >
+            Add option
+          </button>
         </div>
         <div>
-          <div className='ring-1 p-2 ring-red-500 rounded-md cursor-pointer'>
-            <span>Small</span>
-            <span>$2</span>
-          </div>
+          {options.map((item) => {
+            const { title, additionalPrice } = item;
+            return (
+              <div
+                key={title}
+                className='ring-1 p-2 ring-red-500 rounded-md cursor-pointer'
+              >
+                <span>{title}</span>
+                <span>{formatCurrency(additionalPrice)}</span>
+              </div>
+            );
+          })}
         </div>
         <button
           type='submit'
