@@ -44,6 +44,15 @@ const AddProduct = () => {
     []
   );
 
+  const handleOptions = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      setOptions((prev) => [...prev, option]);
+    },
+    [option]
+  );
+
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
@@ -108,7 +117,10 @@ const AddProduct = () => {
               placeholder='Addtional Price'
               onChange={handleChangeOption}
             />
-            <button className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'>
+            <button
+              onClick={handleOptions}
+              className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'
+            >
               Add option
             </button>
           </div>
