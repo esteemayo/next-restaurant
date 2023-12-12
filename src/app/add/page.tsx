@@ -59,6 +59,10 @@ const AddProduct = () => {
     setOptions((prev) => [...prev].filter((item) => item.title !== title));
   }, []);
 
+  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }, []);
+
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
@@ -69,7 +73,7 @@ const AddProduct = () => {
 
   return (
     <div>
-      <form className='shadow-lg flex flex-wrap gap-4 p-8'>
+      <form onSubmit={handleSubmit} className='shadow-lg flex flex-wrap gap-4 p-8'>
         <h1 className='capitalize'>Add new product</h1>
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='title'>Title</label>
