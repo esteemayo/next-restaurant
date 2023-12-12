@@ -37,12 +37,14 @@ export const GET = async () => {
 
 export const POST = async (req: NextResponse) => {
   const session = await getAuthSession();
-  
+
   if (session?.user.isAdmin) {
     try {
       const body = await req.json();
-      const order = await prisma.order.create({ ...body });
-  
+      const order = await prisma.order.create({
+        data: { ...body },
+      });
+
       return new NextResponse(JSON.stringify(order), { status: 201 });
     } catch (err) {
       return new NextResponse(
