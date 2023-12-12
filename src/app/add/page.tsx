@@ -92,6 +92,12 @@ const AddProduct = () => {
             <span>$2</span>
           </div>
         </div>
+        <button
+          type='submit'
+          className='w-full p-2 bg-red-500 text-white rounded-sm outline-red-400 hover:bg-red-400 transition-all'
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
