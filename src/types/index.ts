@@ -106,3 +106,8 @@ export interface ActionType {
   addToCart(payload: CartItemType): void;
   removeFromCart(payload: CartItemType): void;
 }
+
+export interface Option {
+  title: string;
+  additionalPrice: number;
+}
