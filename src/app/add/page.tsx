@@ -110,60 +110,64 @@ const AddProduct = () => {
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='title'>Title</label>
           <input
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            id='title'
             type='text'
             name='title'
             value={inputs.title}
             onChange={handleChange}
+            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='desc'>Desc</label>
           <textarea
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200 resize-none'
+            id='desc'
             name='desc'
             value={inputs.desc}
             onChange={handleChange}
+            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200 resize-none'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='price'>Price</label>
           <input
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            id='price'
             type='number'
             name='price'
             value={inputs.price}
             onChange={handleChange}
+            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='category'>Category</label>
+          <label htmlFor='catSlug'>Category</label>
           <input
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='text'
-            name='category'
+            id='catSlug'
+            name='catSlug'
             value={inputs.catSlug}
             onChange={handleChange}
+            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='options'>Options</label>
           <div>
             <input
-              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='text'
               name='title'
               value={option.title}
               placeholder='Title'
               onChange={handleChangeOption}
+              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             />
             <input
-              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='number'
               name='additionalPrice'
               value={option.additionalPrice}
               placeholder='Addtional Price'
               onChange={handleChangeOption}
+              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             />
           </div>
           <button
