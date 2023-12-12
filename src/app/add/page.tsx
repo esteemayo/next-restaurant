@@ -25,6 +25,7 @@ const AddProduct = () => {
 
   const [inputs, setInputs] = useState(initialState);
   const [options, setOptions] = useState<Array<Option>>([]);
+  const [file, setFile] = useState<FileList | null>();
   const [option, setOption] = useState(optionInitialState);
 
   const handleChange = useCallback(
@@ -107,6 +108,15 @@ const AddProduct = () => {
         className='shadow-lg flex flex-wrap gap-4 p-8'
       >
         <h1 className='capitalize'>Add new product</h1>
+        <div className='w-full flex flex-col gap-2'>
+          <label htmlFor='file'>Image</label>
+          <input
+            id='file'
+            type='file'
+            onChange={(e) => setFile(e.target.files)}
+            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+          />
+        </div>
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='title'>Title</label>
           <input
