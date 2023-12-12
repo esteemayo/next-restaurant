@@ -59,6 +59,11 @@ const AddProduct = () => {
     setOptions((prev) => [...prev].filter((item) => item.title !== title));
   }, []);
 
+  const handleClear = useCallback(() => {
+    setInputs(initialState);
+    setOption(optionInitialState);
+  }, []);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -78,12 +83,13 @@ const AddProduct = () => {
         });
 
         const data = await res.json();
+        handleClear();
         router.push(`/product/${data.id}`);
       } catch (err) {
         console.log(err);
       }
     },
-    [inputs, options, router]
+    [handleClear, inputs, options, router]
   );
 
   if (status === 'loading') {
