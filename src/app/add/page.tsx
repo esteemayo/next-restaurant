@@ -73,6 +73,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='text'
             name='title'
+            value={inputs.title}
             onChange={handleChange}
           />
         </div>
@@ -81,6 +82,7 @@ const AddProduct = () => {
           <textarea
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200 resize-none'
             name='desc'
+            value={inputs.desc}
             onChange={handleChange}
           />
         </div>
@@ -90,6 +92,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='number'
             name='price'
+            value={inputs.price}
             onChange={handleChange}
           />
         </div>
@@ -99,6 +102,7 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
             type='text'
             name='category'
+            value={inputs.catSlug}
             onChange={handleChange}
           />
         </div>
