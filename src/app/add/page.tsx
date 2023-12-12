@@ -77,8 +77,8 @@ const AddProduct = () => {
           body: JSON.stringify(newProduct),
         });
 
-        const data = await res.json()
-        router.push(`/product/${data.id}`)
+        const data = await res.json();
+        router.push(`/product/${data.id}`);
       } catch (err) {
         console.log(err);
       }
