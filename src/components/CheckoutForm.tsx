@@ -62,7 +62,7 @@ const CheckoutForm = () => {
     });
 
     if (error.type === 'card_error' || error.type === 'validation_error') {
-      setMessage(error.message ?? 'Something went wrong!');
+      setMessage(error.message || 'Something went wrong!');
     } else {
       setMessage('An unexpected error occurred.');
     }
