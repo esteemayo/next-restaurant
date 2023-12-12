@@ -7,6 +7,8 @@ import {
   useElements,
 } from '@stripe/react-stripe-js';
 
+import AddressForm from './AddressForm';
+
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -73,6 +75,7 @@ const CheckoutForm = () => {
   return (
     <form id='payment-form' onSubmit={handleSubmit}>
       <PaymentElement id='payment-element' options={{ layout: 'tabs' }} />
+      <AddressForm />
       <button disabled={isLoading || !stripe || !elements} id='submit'>
         <span id='button-text'>
           {isLoading ? <div className='spinner' id='spinner'></div> : 'Pay now'}
