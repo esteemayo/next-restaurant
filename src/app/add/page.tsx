@@ -4,6 +4,8 @@ import { useSession } from 'next-auth/react';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { Option } from '@/types';
+
 const initialState = {
   title: '',
   desc: '',
@@ -21,7 +23,8 @@ const AddProduct = () => {
   const { data: session, status } = useSession();
 
   const [inputs, setInputs] = useState(initialState);
-  const [option, setOption] = useState(optionInitialState);
+  const [options, setOptions] = useState<Array<Option>>([]);
+  const [option, setOption] = useState<Option>(optionInitialState);
 
   const handleChange = useCallback(
     ({
