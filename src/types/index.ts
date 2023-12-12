@@ -107,6 +107,13 @@ export interface ActionType {
   removeFromCart(payload: CartItemType): void;
 }
 
+export interface Inputs {
+  title: string;
+  desc: string;
+  price: number;
+  catSlug: string;
+}
+
 export interface Option {
   title: string;
   additionalPrice: number;
