@@ -60,7 +60,7 @@ const AddProduct = () => {
               placeholder='Addtional Price'
               name='additionalPrice'
             />
-            <button className='capitalize'>Add option</button>
+            <button className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'>Add option</button>
           </div>
         </div>
         <div>
