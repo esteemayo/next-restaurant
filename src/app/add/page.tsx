@@ -25,7 +25,7 @@ const AddProduct = () => {
           <input type='text' name='title' />
         </div>
         <div>
-          <label htmlFor='desc'>DEsc</label>
+          <label htmlFor='desc'>Desc</label>
           <textarea name='desc' />
         </div>
         <div>
