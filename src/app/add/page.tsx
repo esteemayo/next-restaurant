@@ -33,6 +33,14 @@ const AddProduct = () => {
     []
   );
 
+  const handleChangeOption = useCallback(
+    ({ target: input }: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = input;
+      setOption((prev) => ({ ...prev, [name]: value }));
+    },
+    []
+  );
+
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
@@ -86,14 +94,16 @@ const AddProduct = () => {
             <input
               className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='text'
-              placeholder='Title'
               name='title'
+              placeholder='Title'
+              onChange={handleChangeOption}
             />
             <input
               className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
               type='number'
-              placeholder='Addtional Price'
               name='additionalPrice'
+              placeholder='Addtional Price'
+              onChange={handleChangeOption}
             />
             <button className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'>
               Add option
