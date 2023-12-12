@@ -21,3 +21,20 @@ export const GET = async (req: NextRequest) => {
     );
   }
 };
+
+export const POST = async (req: NextRequest) => {
+  const body = await req.json();
+
+  try {
+    const product = await prisma.product.create({
+      data: { ...body },
+    });
+
+    return new NextResponse(JSON.stringify(product), { status: 201 });
+  } catch (err) {
+    return new NextResponse(
+      JSON.stringify({ message: 'Something went wrong!' }),
+      { status: 500 }
+    );
+  }
+};
