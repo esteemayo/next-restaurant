@@ -4,9 +4,9 @@ import { useSession } from 'next-auth/react';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { Option } from '@/types';
+import { Inputs, Option } from '@/types';
 
-const initialState = {
+const initialState: Inputs = {
   title: '',
   desc: '',
   price: 0,
