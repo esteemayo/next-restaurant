@@ -13,7 +13,7 @@ const initialState = {
   catSlug: '',
 };
 
-const optionInitialState = {
+const optionInitialState: Option = {
   title: '',
   additionalPrice: 0,
 };
@@ -24,7 +24,7 @@ const AddProduct = () => {
 
   const [inputs, setInputs] = useState(initialState);
   const [options, setOptions] = useState<Array<Option>>([]);
-  const [option, setOption] = useState<Option>(optionInitialState);
+  const [option, setOption] = useState(optionInitialState);
 
   const handleChange = useCallback(
     ({
