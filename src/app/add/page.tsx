@@ -27,7 +27,18 @@ const AddProduct = () => {
           <label htmlFor='options'>Options</label>
           <div>
             <input type='text' placeholder='Title' name='title' />
-            <input type='number' placeholder='Price' name='additionalPrice' />
+            <input
+              type='number'
+              placeholder='Addtional Price'
+              name='additionalPrice'
+            />
+            <button className='capitalize'>Add option</button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <span>Small</span>
+            <span>$2</span>
           </div>
         </div>
       </form>
