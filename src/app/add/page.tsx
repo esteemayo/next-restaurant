@@ -161,7 +161,7 @@ const AddProduct = () => {
             name='title'
             value={inputs.title}
             onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -171,7 +171,7 @@ const AddProduct = () => {
             name='desc'
             value={inputs.desc}
             onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200 resize-none'
+            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200 resize-none'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -182,7 +182,7 @@ const AddProduct = () => {
             name='price'
             value={inputs.price}
             onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -193,7 +193,7 @@ const AddProduct = () => {
             name='catSlug'
             value={inputs.catSlug}
             onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
@@ -205,7 +205,7 @@ const AddProduct = () => {
               value={option.title}
               placeholder='Title'
               onChange={handleChangeOption}
-              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+              className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
             />
             <input
               type='number'
@@ -213,7 +213,7 @@ const AddProduct = () => {
               value={option.additionalPrice}
               placeholder='Addtional Price'
               onChange={handleChangeOption}
-              className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+              className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
             />
           </div>
           <button
