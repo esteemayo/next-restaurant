@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { Inputs, Option } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
+import Image from 'next/image';
 
 const initialState: Inputs = {
   title: '',
@@ -52,9 +53,8 @@ const AddProduct = () => {
       const item = (target.files as FileList)[0];
       setFile(item);
     },
-    [],
+    []
   );
-  
 
   const handleOptions = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -75,31 +75,30 @@ const AddProduct = () => {
     setOption(optionInitialState);
   }, []);
 
-  const handleUpload = useCallback(
-    async () => {
-      const data = new FormData();
-      data.set('file', file!);
-      data.set('upload_preset', 'restaurant');
+  const handleUpload = useCallback(async () => {
+    const data = new FormData();
+    data.set('file', file!);
+    data.set('upload_preset', 'restaurant');
 
-      const res = await fetch('https://api.cloudinary.com/v1_1/:learnhowtocode/image/upload', {
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/:learnhowtocode/image/upload',
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',
         },
         body: data,
-      });
+      }
+    );
 
-      const resData = await res.json();
-      return resData.url;
-    },
-    [file],
-  );
-  
+    const resData = await res.json();
+    return resData.url;
+  }, [file]);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      
+
       try {
         const url = await handleUpload();
 
@@ -136,19 +135,22 @@ const AddProduct = () => {
   }
 
   return (
-    <div>
+    <div className='p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-red-500'>
       <form
         onSubmit={handleSubmit}
         className='shadow-lg flex flex-wrap gap-4 p-8'
       >
-        <h1 className='capitalize'>Add new product</h1>
+        <h1 className='capitalize text-4xl mb-2 text-gray-300 font-bold'>Add new product</h1>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='file'>Image</label>
+          <label htmlFor='file' className='text-sm cursor-pointer flex gap-4 items-center'>
+          <Image src='/img/upload.png' width={30} height={20} alt='upload icon' />
+            <span className='capitalize'>Upload image</span>
+          </label>
           <input
             id='file'
             type='file'
             onChange={handleChangeImage}
-            className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
+            className='hidden'
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
