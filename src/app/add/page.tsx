@@ -154,7 +154,7 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='title'>Title</label>
+          <label htmlFor='title' className='text-sm'>Title</label>
           <input
             id='title'
             type='text'
@@ -165,7 +165,7 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='desc'>Desc</label>
+          <label htmlFor='desc' className='text-sm'>Description</label>
           <textarea
             id='desc'
             name='desc'
@@ -175,7 +175,7 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='price'>Price</label>
+          <label htmlFor='price' className='text-sm'>Price</label>
           <input
             id='price'
             type='number'
@@ -197,7 +197,7 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='options'>Options</label>
+          <label htmlFor='options' className='text-sm'>Options</label>
           <div>
             <input
               type='text'
