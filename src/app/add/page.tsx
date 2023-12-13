@@ -224,17 +224,17 @@ const AddProduct = () => {
             Add option
           </button>
         </div>
-        <div>
+        <div className='flex flex-wrap gap-4 mt-2'>
           {options.map((item) => {
             const { title, additionalPrice } = item;
             return (
               <div
                 key={title}
                 onClick={() => handleDeleteOption(title)}
-                className='ring-1 p-2 ring-red-500 rounded-md cursor-pointer'
+                className='p-2 bg-gray-200 text-gray-400 rounded-md cursor-pointer flex items-center gap-2'
               >
                 <span>{title}</span>
-                <span>{formatCurrency(additionalPrice)}</span>
+                <span className='text-sm'>(+ {formatCurrency(additionalPrice)})</span>
               </div>
             );
           })}
