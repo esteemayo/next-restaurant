@@ -101,7 +101,7 @@ const AddProduct = () => {
       e.preventDefault();
       
       try {
-        const url = handleUpload();
+        const url = await handleUpload();
 
         const newProduct = {
           ...inputs,
