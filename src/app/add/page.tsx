@@ -136,14 +136,21 @@ const AddProduct = () => {
 
   return (
     <div className='p-4 py-[30rem] lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-red-500'>
-      <form
-        onSubmit={handleSubmit}
-        className='flex flex-wrap gap-6'
-      >
-        <h1 className='capitalize text-4xl mb-2 text-gray-300 font-bold'>Add new product</h1>
+      <form onSubmit={handleSubmit} className='flex flex-wrap gap-6'>
+        <h1 className='capitalize text-4xl mb-2 text-gray-300 font-bold'>
+          Add new product
+        </h1>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='file' className='text-sm cursor-pointer flex gap-4 items-center'>
-          <Image src='/img/upload.png' width={30} height={20} alt='upload icon' />
+          <label
+            htmlFor='file'
+            className='text-sm cursor-pointer flex gap-4 items-center'
+          >
+            <Image
+              src='/img/upload.png'
+              width={30}
+              height={20}
+              alt='upload icon'
+            />
             <span className='capitalize'>Upload image</span>
           </label>
           <input
@@ -154,7 +161,9 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='title' className='text-sm'>Title</label>
+          <label htmlFor='title' className='text-sm'>
+            Title
+          </label>
           <input
             id='title'
             type='text'
@@ -165,7 +174,9 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='desc' className='text-sm'>Description</label>
+          <label htmlFor='desc' className='text-sm'>
+            Description
+          </label>
           <textarea
             id='desc'
             name='desc'
@@ -175,7 +186,9 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='price' className='text-sm'>Price</label>
+          <label htmlFor='price' className='text-sm'>
+            Price
+          </label>
           <input
             id='price'
             type='number'
@@ -197,7 +210,9 @@ const AddProduct = () => {
           />
         </div>
         <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='options' className='text-sm'>Options</label>
+          <label htmlFor='options' className='text-sm'>
+            Options
+          </label>
           <div>
             <input
               type='text'
@@ -205,7 +220,7 @@ const AddProduct = () => {
               value={option.title}
               placeholder='Title'
               onChange={handleChangeOption}
-              className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
+              className='w-full md:w-[13rem] ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
             />
             <input
               type='number'
@@ -213,7 +228,7 @@ const AddProduct = () => {
               value={option.additionalPrice}
               placeholder='Addtional Price'
               onChange={handleChangeOption}
-              className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
+              className='w-full md:w-[13rem] ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
             />
           </div>
           <button
@@ -234,7 +249,9 @@ const AddProduct = () => {
                 className='p-2 bg-gray-200 text-gray-400 rounded-md cursor-pointer flex items-center gap-2'
               >
                 <span>{title}</span>
-                <span className='text-sm'>(+ {formatCurrency(additionalPrice)})</span>
+                <span className='text-sm'>
+                  (+ {formatCurrency(additionalPrice)})
+                </span>
               </div>
             );
           })}
