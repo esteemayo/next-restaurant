@@ -1,12 +1,12 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Inputs, Option } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
-import Image from 'next/image';
 
 const initialState: Inputs = {
   title: '',
