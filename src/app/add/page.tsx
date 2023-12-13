@@ -219,7 +219,7 @@ const AddProduct = () => {
           <button
             type='button'
             onClick={handleOptions}
-            className='w-52 p-2 bg-red-500 text-white capitalize rounded-sm outline-red-400 hover:bg-red-400 transition-all'
+            className='bg-gray-500 p-2 text-white rounded-sm hover:bg-gray-400 transition-all'
           >
             Add option
           </button>
