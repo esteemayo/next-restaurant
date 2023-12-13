@@ -25,7 +25,7 @@ const AddProduct = () => {
 
   const [inputs, setInputs] = useState(initialState);
   const [options, setOptions] = useState<Array<Option>>([]);
-  const [file, setFile] = useState<FileList | null>();
+  const [file, setFile] = useState<File>();
   const [option, setOption] = useState(optionInitialState);
 
   const handleChange = useCallback(
@@ -46,6 +46,16 @@ const AddProduct = () => {
     []
   );
 
+  const handleChangeImage = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const target = e.target as HTMLInputElement;
+      const item = (target.files as FileList)[0];
+      setFile(item);
+    },
+    [],
+  );
+  
+
   const handleOptions = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
@@ -65,16 +75,40 @@ const AddProduct = () => {
     setOption(optionInitialState);
   }, []);
 
+  const handleUpload = useCallback(
+    async () => {
+      const data = new FormData();
+      data.set('file', file!);
+      data.set('upload_preset', 'restaurant');
+
+      const res = await fetch('https://api.cloudinary.com/v1_1/:learnhowtocode/image/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        body: data,
+      });
+
+      const resData = await res.json();
+      return resData.url;
+    },
+    [file],
+  );
+  
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
-      const newProduct = {
-        ...inputs,
-        options,
-      };
-
+      
       try {
+        const url = handleUpload();
+
+        const newProduct = {
+          ...inputs,
+          options,
+          img: url,
+        };
+
         const res = await fetch('http://localhost:3000/api/products', {
           method: 'POST',
           headers: {
@@ -90,7 +124,7 @@ const AddProduct = () => {
         console.log(err);
       }
     },
-    [handleClear, inputs, options, router]
+    [handleClear, handleUpload, inputs, options, router]
   );
 
   if (status === 'loading') {
@@ -113,7 +147,7 @@ const AddProduct = () => {
           <input
             id='file'
             type='file'
-            onChange={(e) => setFile(e.target.files)}
+            onChange={handleChangeImage}
             className='ring-1 ring-red-200 p-2 rounded-sm outline-red-300 caret-red-200'
           />
         </div>
