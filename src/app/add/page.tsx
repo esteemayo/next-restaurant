@@ -135,10 +135,10 @@ const AddProduct = () => {
   }
 
   return (
-    <div className='p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-red-500'>
+    <div className='p-4 py-[30rem] lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-red-500'>
       <form
         onSubmit={handleSubmit}
-        className='shadow-lg flex flex-wrap gap-4 p-8'
+        className='flex flex-wrap gap-6'
       >
         <h1 className='capitalize text-4xl mb-2 text-gray-300 font-bold'>Add new product</h1>
         <div className='w-full flex flex-col gap-2'>
