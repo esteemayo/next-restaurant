@@ -28,9 +28,6 @@ const Pay = ({ params }: IParams) => {
           `http://localhost:3000/api/create-intent/${id}`,
           {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
           }
         );
 
