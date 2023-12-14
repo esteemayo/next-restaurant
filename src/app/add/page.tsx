@@ -1,10 +1,10 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
-import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useCallback, useState } from 'react';
 
+import FileInput from '@/components/FileInput';
 import Input from '@/components/Input';
 import TextArea from '@/components/TextArea';
 
@@ -145,26 +145,12 @@ const AddProduct = () => {
         <h1 className='capitalize text-4xl mb-2 text-gray-300 font-bold'>
           Add new product
         </h1>
-        <div className='w-full flex flex-col gap-2'>
-          <label
-            htmlFor='file'
-            className='text-sm cursor-pointer flex gap-4 items-center'
-          >
-            <Image
-              src='/img/upload.png'
-              width={30}
-              height={20}
-              alt='upload icon'
-            />
-            <span className='capitalize'>Upload image</span>
-          </label>
-          <input
-            id='file'
-            type='file'
-            onChange={handleChangeImage}
-            className='hidden'
-          />
-        </div>
+        <FileInput
+          id='file'
+          icon='/img/upload.png'
+          label='Upload image'
+          onChange={handleChangeImage}
+        />
         <Input
           name='title'
           label='Title'
