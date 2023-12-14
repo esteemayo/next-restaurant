@@ -8,6 +8,8 @@ import { useRouter } from 'next/navigation';
 import { Inputs, NewProduct, Option } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
+import Input from '@/components/Input';
+
 const initialState: Inputs = {
   title: '',
   desc: '',
@@ -162,19 +164,12 @@ const AddProduct = () => {
             className='hidden'
           />
         </div>
-        <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='title' className='text-sm'>
-            Title
-          </label>
-          <input
-            id='title'
-            type='text'
-            name='title'
-            value={inputs.title}
-            onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
-          />
-        </div>
+        <Input
+          name='title'
+          label='Title'
+          value={inputs.title}
+          onChange={handleChange}
+        />
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='desc' className='text-sm'>
             Description
