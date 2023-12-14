@@ -44,7 +44,7 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
   return (
     <button
       onClick={handleDelete}
-      className='bg-red-400 p-2 rounded-full absolute top-4 right-4'
+      className='bg-red-400 p-2 rounded-full outline-red-500 absolute top-4 right-4'
     >
       <Image src='/img/delete.png' width={20} height={20} alt='delete icon' />
     </button>
