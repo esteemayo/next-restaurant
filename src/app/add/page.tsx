@@ -182,19 +182,13 @@ const AddProduct = () => {
             className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200 resize-none'
           />
         </div>
-        <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='price' className='text-sm'>
-            Price
-          </label>
-          <input
-            id='price'
-            type='number'
-            name='price'
-            value={inputs.price}
-            onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
-          />
-        </div>
+        <Input
+          name='price'
+          label='Price'
+          type='number'
+          value={inputs.price}
+          onChange={handleChange}
+        />
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='catSlug'>Category</label>
           <input
