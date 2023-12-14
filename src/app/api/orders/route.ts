@@ -42,7 +42,7 @@ export const POST = async (req: NextResponse) => {
     try {
       const body = await req.json();
       const order = await prisma.order.create({
-        data: { ...body },
+        data: body,
       });
 
       return new NextResponse(JSON.stringify(order), { status: 201 });
