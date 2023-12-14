@@ -144,5 +144,6 @@ export interface TextAreaProps
 export interface FileInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
+  icon: string;
   label: string;
 }
