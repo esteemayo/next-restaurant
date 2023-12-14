@@ -7,12 +7,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { withSwal } from 'react-sweetalert2';
 
-import { SwalResult } from '@/types';
-
-interface DeleteButtonProps {
-  id: string;
-  swal: any;
-}
+import { DeleteButtonProps, SwalResult } from '@/types';
 
 const DeleteButton = ({ id, swal }: DeleteButtonProps) => {
   const router = useRouter();

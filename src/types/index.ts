@@ -148,6 +148,11 @@ export interface FileInputProps
   label: string;
 }
 
+export interface DeleteButtonProps {
+  id: string;
+  swal: any;
+}
+
 export interface SwalResult {
   isConfirmed: boolean;
   isDenied: boolean;
