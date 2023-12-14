@@ -127,3 +127,9 @@ export interface NewProduct {
   price: number;
   catSlug: string;
 }
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  label: string;
+}
