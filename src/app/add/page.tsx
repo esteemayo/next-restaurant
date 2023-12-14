@@ -184,22 +184,17 @@ const AddProduct = () => {
         </div>
         <Input
           name='price'
-          label='Price'
           type='number'
+          label='Price'
           value={inputs.price}
           onChange={handleChange}
         />
-        <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='catSlug'>Category</label>
-          <input
-            type='text'
-            id='catSlug'
-            name='catSlug'
-            value={inputs.catSlug}
-            onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
-          />
-        </div>
+        <Input
+          name='catSlug'
+          label='Category'
+          value={inputs.catSlug}
+          onChange={handleChange}
+        />
         <div className='w-full flex flex-col gap-2'>
           <label htmlFor='options' className='text-sm'>
             Options
