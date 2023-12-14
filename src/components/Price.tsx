@@ -63,7 +63,7 @@ const Price = ({ product }: PriceProps) => {
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>{formatCurrency(total)}</h2>
       <div className='flex items-center gap-4'>
-        {product.options?.length &&
+        {!!product.options &&
           product.options?.map((option, index) => {
             const { title } = option;
             return (

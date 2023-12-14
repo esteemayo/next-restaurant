@@ -46,12 +46,13 @@ const DeleteButton = ({ id, swal }: DeleteButtonProps) => {
           reverseButtons: true,
         })
         .then(async (result: any) => {
+          console.log(result)
           if (result.isConfirmed) {
-            await handleDelete();
+            // await handleDelete();
           }
         });
     },
-    [handleDelete, swal]
+    [ swal]
   );
 
   if (status === 'loading') {
