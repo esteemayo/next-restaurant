@@ -134,3 +134,9 @@ export interface InputProps
   label: string;
   type?: string;
 }
+
+export interface TextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  name: string;
+  label: string;
+}
