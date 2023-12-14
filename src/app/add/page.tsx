@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { Inputs, Option } from '@/types';
+import { Inputs, NewProduct, Option } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
 
 const initialState: Inputs = {
@@ -99,14 +99,16 @@ const AddProduct = () => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      try {
-        const url = await handleUpload();
+      const newProduct: NewProduct = {
+        ...inputs,
+        options,
+      };
 
-        const newProduct = {
-          ...inputs,
-          options,
-          img: url,
-        };
+      try {
+        if (file) {
+          const url = await handleUpload();
+          newProduct.img = url;
+        }
 
         const res = await fetch('http://localhost:3000/api/products', {
           method: 'POST',
@@ -123,7 +125,7 @@ const AddProduct = () => {
         console.log(err);
       }
     },
-    [handleClear, handleUpload, inputs, options, router]
+    [file, handleClear, handleUpload, inputs, options, router]
   );
 
   if (status === 'loading') {
