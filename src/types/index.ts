@@ -147,3 +147,10 @@ export interface FileInputProps
   icon: string;
   label: string;
 }
+
+export interface SwalResult {
+  isConfirmed: boolean;
+  isDenied: boolean;
+  isDismissed: boolean;
+  value: boolean;
+}
