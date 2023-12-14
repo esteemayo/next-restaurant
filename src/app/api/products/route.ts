@@ -27,7 +27,7 @@ export const POST = async (req: NextRequest) => {
 
   try {
     const product = await prisma.product.create({
-      data: { ...body },
+      data: body,
     });
 
     return new NextResponse(JSON.stringify(product), { status: 201 });
