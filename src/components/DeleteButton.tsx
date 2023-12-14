@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { withSwal } from 'react-sweetalert2';
 
+import { SwalResult } from '@/types';
+
 interface DeleteButtonProps {
   id: string;
   swal: any;
@@ -45,14 +47,13 @@ const DeleteButton = ({ id, swal }: DeleteButtonProps) => {
           confirmButtonText: 'Delete',
           reverseButtons: true,
         })
-        .then(async (result: any) => {
-          console.log(result)
+        .then(async (result: SwalResult) => {
           if (result.isConfirmed) {
-            // await handleDelete();
+            await handleDelete();
           }
         });
     },
-    [ swal]
+    [handleDelete, swal]
   );
 
   if (status === 'loading') {
