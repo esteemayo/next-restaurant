@@ -5,10 +5,11 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+import Input from '@/components/Input';
+import TextArea from '@/components/TextArea';
+
 import { Inputs, NewProduct, Option } from '@/types';
 import { formatCurrency } from '@/utils/formatCurrency';
-
-import Input from '@/components/Input';
 
 const initialState: Inputs = {
   title: '',
@@ -170,18 +171,12 @@ const AddProduct = () => {
           value={inputs.title}
           onChange={handleChange}
         />
-        <div className='w-full flex flex-col gap-2'>
-          <label htmlFor='desc' className='text-sm'>
-            Description
-          </label>
-          <textarea
-            id='desc'
-            name='desc'
-            value={inputs.desc}
-            onChange={handleChange}
-            className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200 resize-none'
-          />
-        </div>
+        <TextArea
+          name='desc'
+          label='Description'
+          value={inputs.desc}
+          onChange={handleChange}
+        />
         <Input
           name='price'
           type='number'
