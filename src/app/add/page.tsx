@@ -88,9 +88,6 @@ const AddProduct = () => {
       'https://api.cloudinary.com/v1_1/:learnhowtocode/image/upload',
       {
         method: 'POST',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
         body: data,
       }
     );
