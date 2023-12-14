@@ -9,7 +9,7 @@ const FileInput = ({ id, icon, label, ...rest }: FileInputProps) => {
         htmlFor={id}
         className='text-sm cursor-pointer flex gap-4 items-center'
       >
-        <Image src={icon} width={30} height={20} alt='file icon' />
+        <Image src={icon} width={30} height={20} alt='icon' />
         <span className='capitalize'>{label}</span>
       </label>
       <input {...rest} id={id} type='file' className='hidden' />
