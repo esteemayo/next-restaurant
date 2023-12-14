@@ -118,3 +118,12 @@ export interface Option {
   title: string;
   additionalPrice: number;
 }
+
+export interface NewProduct {
+  options: Option[];
+  img?: string;
+  title: string;
+  desc: string;
+  price: number;
+  catSlug: string;
+}
