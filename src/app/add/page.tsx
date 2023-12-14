@@ -80,6 +80,7 @@ const AddProduct = () => {
 
   const handleUpload = useCallback(async () => {
     const data = new FormData();
+
     data.set('file', file!);
     data.set('upload_preset', 'restaurant');
 
