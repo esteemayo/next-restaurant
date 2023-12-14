@@ -1,15 +1,18 @@
 'use client';
 
-const Input = () => {
+import { InputProps } from '@/types';
+
+const Input = ({ name, label, ...rest }: InputProps) => {
   return (
     <div className='w-full flex flex-col gap-2'>
-      <label htmlFor='title' className='text-sm'>
-        Title
+      <label htmlFor={name} className='text-sm'>
+        {label}
       </label>
       <input
-        id='title'
+        {...rest}
+        id={name}
         type='text'
-        name='title'
+        name={name}
         className='ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-red-300 caret-red-200'
       />
     </div>
