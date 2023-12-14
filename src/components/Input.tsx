@@ -1,5 +1,3 @@
-'use client';
-
 import { InputProps } from '@/types';
 
 const Input = ({ name, label, type = 'text', ...rest }: InputProps) => {
