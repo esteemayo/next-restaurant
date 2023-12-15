@@ -4,6 +4,7 @@ import { loadStripe, StripeElementsOptions } from '@stripe/stripe-js';
 import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 
+import { useCartStore } from '@/hooks/useCartStore';
 import CheckoutForm from '@/components/CheckoutForm';
 
 const stripePromise = loadStripe(
@@ -18,6 +19,7 @@ interface IParams {
 
 const Pay = ({ params }: IParams) => {
   const { id } = params;
+  const reset = useCartStore((state) => state.reset);
 
   const [clientSecret, setClientSecret] = useState('');
 
@@ -33,13 +35,14 @@ const Pay = ({ params }: IParams) => {
 
         const data = await res.json();
         setClientSecret(data.clientSecret);
+        reset();
       } catch (err) {
         console.log(err);
       }
     };
 
     makeRequest();
-  }, [id]);
+  }, [id, reset]);
 
   const options: StripeElementsOptions = {
     clientSecret,
