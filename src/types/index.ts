@@ -164,5 +164,5 @@ export interface SwalResult {
 export interface HeadingProps {
   title: string;
   subtitle: string;
-  center?: string;
+  center?: boolean;
 }
