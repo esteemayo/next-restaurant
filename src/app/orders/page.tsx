@@ -8,6 +8,7 @@ import { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { OrderType } from '@/types';
+import { formatCurrency } from '@/utils/formatCurrency';
 
 const Orders = () => {
   const router = useRouter();
@@ -87,7 +88,7 @@ const Orders = () => {
                 <td className='py-6 px-1'>
                   {createdAt.toString().slice(0, 10)}
                 </td>
-                <td className='py-6 px-1'>{price}</td>
+                <td className='py-6 px-1'>{formatCurrency(price)}</td>
                 <td className='hidden md:block py-6 px-1'>
                   {products.map((item) => {
                     return item.title;
