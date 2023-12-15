@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+import Heading from '@/components/Heading';
+
 interface ErrorStateProps {
   message: Error;
 }
@@ -11,7 +13,11 @@ const ErrorState = ({ message }: ErrorStateProps) => {
     console.error(message);
   }, [message]);
 
-  return <div>ErrorState</div>;
+  return (
+    <div>
+      <Heading title='Uh oh' subtitle='Something went wrong!' center={true} />
+    </div>
+  );
 };
 
 export default ErrorState;
