@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavItem url='/' label='Contact' />
       </ul>
       <div className='text-xl md:font-bold flex-1 md:text-center'>
-        <Link href='/'>Massimo</Link>
+        <Link href='/' className='outline-red-100'>Massimo</Link>
       </div>
       <div className='md:hidden'>
         <Menu />
