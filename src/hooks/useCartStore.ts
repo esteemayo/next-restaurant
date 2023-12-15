@@ -18,6 +18,16 @@ export const useCartStore = create<CartStore & ActionType>()(
       products: INITIAL_STATE.products,
       totalItems: INITIAL_STATE.totalItems,
       totalPrice: INITIAL_STATE.totalPrice,
+      reset: () =>
+        set(
+          produce((state) => {
+            state.products = INITIAL_STATE.products;
+            state.totalItems = INITIAL_STATE.totalItems;
+            state.totalPrice = INITIAL_STATE.totalPrice;
+          }),
+          false,
+          'resetCart'
+        ),
       addToCart: (payload) =>
         set(
           produce((state) => {
@@ -54,10 +64,7 @@ export const useCartStore = create<CartStore & ActionType>()(
             const products = get().products;
             const index = products.find((item) => item.id === payload.id);
 
-            state.products.splice(
-              index,
-              1
-            );
+            state.products.splice(index, 1);
             state.totalItems -= payload.quantity;
             state.totalPrice -= payload.price;
           }),
