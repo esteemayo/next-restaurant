@@ -1,5 +1,6 @@
-import { prisma } from '@/utils/connect';
 import { NextRequest, NextResponse } from 'next/server';
+
+import { prisma } from '@/utils/connect';
 
 interface IParams {
   params: {
