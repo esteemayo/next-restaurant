@@ -34,7 +34,7 @@ const Cart = () => {
               price: totalPrice,
               products,
               status: 'Not Paid!',
-              userEmail: session.user.id,
+              userEmail: session.user.email,
             }),
           });
 
