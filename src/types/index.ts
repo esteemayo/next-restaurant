@@ -103,6 +103,7 @@ export interface CartStore {
 }
 
 export interface ActionType {
+  reset(): void;
   addToCart(payload: CartItemType): void;
   removeFromCart(payload: CartItemType): void;
 }
