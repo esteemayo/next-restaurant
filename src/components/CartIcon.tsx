@@ -9,7 +9,7 @@ const CartIcon = () => {
   const totalItems = useCartStore((state) => state.totalItems);
 
   return (
-    <Link href='/cart' className='flex items-center gap-4'>
+    <Link href='/cart' className='flex items-center gap-4 outline-red-100'>
       <div className='relative w-8 h-8 md:w-5 md:h-5'>
         <Image src='/img/cart.png' fill alt='cart icon' />
       </div>
