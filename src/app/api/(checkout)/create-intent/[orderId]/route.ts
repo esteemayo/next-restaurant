@@ -21,7 +21,7 @@ export const POST = async (req: NextRequest, { params }: IParams) => {
 
   if (order) {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 100 * 100,
+      amount: (order.price as any) * 100,
       currency: 'usd',
       automatic_payment_methods: {
         enabled: true,
@@ -41,9 +41,8 @@ export const POST = async (req: NextRequest, { params }: IParams) => {
       JSON.stringify({ clientSecret: paymentIntent.client_secret }),
       { status: 200 }
     );
-  } else {
-    return new NextResponse(JSON.stringify({ message: 'Order not found!' }), {
-      status: 404,
-    });
   }
+  return new NextResponse(JSON.stringify({ message: 'Order not found!' }), {
+    status: 404,
+  });
 };
