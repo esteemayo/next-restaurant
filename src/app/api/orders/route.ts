@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import { prisma } from '@/utils/connect';
 import { getAuthSession } from '@/utils/auth';
@@ -35,10 +35,10 @@ export const GET = async () => {
   }
 };
 
-export const POST = async (req: NextResponse) => {
+export const POST = async (req: NextRequest) => {
   const session = await getAuthSession();
 
-  if (session?.user.isAdmin) {
+  if (session) {
     try {
       const body = await req.json();
       const order = await prisma.order.create({
