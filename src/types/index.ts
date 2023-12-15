@@ -160,3 +160,9 @@ export interface SwalResult {
   isDismissed: boolean;
   value: boolean;
 }
+
+export interface HeadingProps {
+  title: string;
+  subtitle: string;
+  center?: string;
+}
