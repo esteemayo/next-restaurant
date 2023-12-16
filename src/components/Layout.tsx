@@ -2,8 +2,8 @@ import ClientOnly from './ClientOnly';
 import Footer from './Footer';
 import Notification from './Notification';
 
-import AuthProvider from '@/providers/AuthProvider';
 import ToastProvider from '@/providers/ToastProvider';
+import AuthProvider from '@/providers/AuthProvider';
 import QueryProvider from '@/providers/QueryProvider';
 
 import Navbar from './navbar/Navbar';
