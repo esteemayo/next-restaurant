@@ -15,7 +15,7 @@ const ErrorState = ({ message }: ErrorStateProps) => {
   }, [message]);
 
   return (
-    <div className='p-4 lg:px-20 xl:p-40 h-screen flex flex-col items-center justify-around'>
+    <div className='p-4 lg:px-20 xl:p-40 h-[80vh] flex flex-col items-center justify-around'>
       <Image
         src='/img/error.png'
         width={500}
