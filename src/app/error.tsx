@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 import Heading from '@/components/Heading';
@@ -15,6 +16,13 @@ const ErrorState = ({ message }: ErrorStateProps) => {
 
   return (
     <div>
+      <Image
+        src='/img/error.png'
+        width={500}
+        height={500}
+        alt='error'
+        className='block object-cover'
+      />
       <Heading title='Uh oh' subtitle='Something went wrong!' center={true} />
     </div>
   );
