@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 import { MenuType } from '@/types';
 
@@ -13,6 +14,10 @@ const getData = async () => {
 
   const data = await res.json();
   return data;
+};
+
+export const metadata: Metadata = {
+  title: 'Restaurant | Menu',
 };
 
 const Menu = async () => {
