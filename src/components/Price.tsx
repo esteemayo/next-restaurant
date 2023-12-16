@@ -10,8 +10,8 @@ import { useCartStore } from '@/hooks/useCartStore';
 const Price = ({ product }: PriceProps) => {
   const addToCart = useCartStore((state) => state.addToCart);
 
-  const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
+  const [total, setTotal] = useState(product.price);
   const [selected, setSelected] = useState(0);
 
   const handleIncrement = useCallback(() => {
@@ -47,7 +47,7 @@ const Price = ({ product }: PriceProps) => {
 
       toast.success('The product added to the cart!');
     },
-    [addToCart, quantity, product, selected, total]
+    [addToCart, product, quantity, selected, total]
   );
 
   useEffect(() => {
