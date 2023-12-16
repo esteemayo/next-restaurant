@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 
 import Price from '@/components/Price';
 import DeleteButton from '@/components/DeleteButton';
@@ -23,6 +24,17 @@ interface IParams {
     id: string;
   };
 }
+
+export async function generateMetadata({ params }: IParams): Promise<Metadata> {
+  const { id } = params;
+
+  const res = await fetch(`http://localhost:3000/api/products/${id}`);
+  const product = await res.json();
+
+  return {
+    title: `Restaurant | ${product.title}`,
+  };
+};
 
 const Product = async ({ params }: IParams) => {
   const product: SingleProductType = await getData(params.id);
