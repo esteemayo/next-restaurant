@@ -12,7 +12,7 @@ const getData = async (category: string) => {
   );
 
   if (!res.ok) {
-    throw new Error('Failed');
+    throw new Error('Failed!');
   }
 
   const data = await res.json();
