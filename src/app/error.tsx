@@ -15,7 +15,7 @@ const ErrorState = ({ message }: ErrorStateProps) => {
   }, [message]);
 
   return (
-    <div className='p-4 lg:px-20 xl:p-40 h-[80vh] flex flex-col items-center justify-around'>
+    <main className='p-4 lg:px-20 xl:p-40 h-[80vh] flex flex-col items-center justify-around'>
       <Image
         src='/img/error.png'
         width={500}
@@ -24,7 +24,7 @@ const ErrorState = ({ message }: ErrorStateProps) => {
         className='block object-cover'
       />
       <Heading title='Uh oh' subtitle='Something went wrong!' center={true} />
-    </div>
+    </main>
   );
 };
 
