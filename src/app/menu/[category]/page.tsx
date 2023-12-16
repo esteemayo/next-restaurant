@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { ProductType } from '@/types';
 import ProductCard from '@/components/cards/ProductCard';
 
@@ -20,6 +22,18 @@ const getData = async (category: string) => {
 interface CategoryProps {
   params: {
     category: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: CategoryProps): Promise<Metadata> {
+  const { category } = params;
+
+  const title = category[0].toUpperCase().concat(category.substring(1));
+
+  return {
+    title: `Restaurant | ${title}`,
   };
 }
 
