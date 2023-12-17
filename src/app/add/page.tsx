@@ -81,8 +81,8 @@ const AddProduct = () => {
   const handleUpload = useCallback(async () => {
     const data = new FormData();
 
-    data.set('file', file!);
-    data.set('upload_preset', 'restaurant');
+    data.append('file', file!);
+    data.append('upload_preset', 'restaurant');
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/:learnhowtocode/image/upload',
